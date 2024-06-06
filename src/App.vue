@@ -1,17 +1,27 @@
 <template>
-  <Header/>
+  <div class="wrapper">
 
-  <Footer/>
+    <Header/>
+
+    <Main/>
+
+    <Footer/>
+
+  </div>
+  
 </template>
 
 <script>
-import Footer from './components/Footer'
+
 import Header from './components/Header'
+import Main from './components/Main'
+import Footer from './components/Footer'
 
 
 export default {
-  components: { Header, Footer },
+  components: { Header, Main, Footer },
 }
+
 </script>
 
 <style>
