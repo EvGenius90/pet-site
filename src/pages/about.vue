@@ -1,6 +1,5 @@
 <template>
-    <main class="main">
-    </main>
+    <h1>from about</h1>
 </template>
 
 <script>

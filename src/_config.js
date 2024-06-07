@@ -2,8 +2,6 @@ export const links = [
     {
         title: 'О нас',
         url: '/about',
-        img: './assets/imgs/Group632.png',
-        logo: 'logo'
     },
     {
         title: 'Доставка и оплата',
@@ -101,11 +99,22 @@ export const vetclinic = {
     url: '/vetClinic'
 }
 
+export const franchising = {
+    title: 'Франчайзинг',
+    url: '/franchising'
+}
+
 
 export const pictures = 
     {
         logo:{
             url: require('./assets/imgs/Group312.png')
+        },
+        cat:{
+            url: require('./assets/imgs/cat.png')
+        },
+        imgSlide:{
+            url: require('./assets/imgs/1c1.png')
         }
     }
 
@@ -123,5 +132,14 @@ export const icons =
     },
     phone:{
         url: require('./assets/icons/bx-phone-call.svg')
+    },
+    vectorRight:{
+        url: require('./assets/icons/Group325.svg')
+    },
+    arrowRight:{
+        url: require('./assets/icons/arrow_right.svg')
+    },
+    arrowLeft:{
+        url: require('./assets/icons/arrow_left.svg')
     }
 }

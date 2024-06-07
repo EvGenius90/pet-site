@@ -13,7 +13,7 @@
                         <div>
                             <ul>
                                 <li class="header__upper-list more">
-                                    <a class="header__upper-outline link-more" href="#">Ваш город</a>
+                                    <routerLink class="header__upper-outline link-more" to="#">Ваш город</routerLink>
                                     <ul class="header__upper-list-submenu submenu hidden-menu">
                                         <div class="all-close submenu__close close">&#215;</div>
                                         <p>Выберите ваш город</p>
@@ -35,13 +35,13 @@
                             </ul>
                         </div>
                         <li class="header__upper-nav-li" v-for="link of links" :key="link">
-                            <a :href="link.url">{{ link.title }}</a>
+                            <RouterLink :to="link.url">{{ link.title }}</RouterLink>
                         </li>
                         <li class="header__upper-more more">
-                            <a class="header__upper-more-vector link-more" href="#">Еще</a>
+                            <RouterLink class="header__upper-more-vector link-more" to="#">Еще</RouterLink>
                             <ul class="submenu hidden-menu ">
-                                <li><a href="#">Бонусная программа</a></li>
-                                <li><a href="#">Для юр. лиц</a></li>
+                                <li><RouterLink to="#">Бонусная программа</RouterLink></li>
+                                <li><RouterLink to="#">Для юр. лиц</RouterLink></li>
                                 
                             </ul>
                         </li>
@@ -49,13 +49,13 @@
                     <div class="header__upper-phone">
                         <img :src="icons.phone.url" alt="phone">
                         <p>+7 (3452) 59-49-45</p>
-                        <a class="call" href="#">Заказать звонок</a>
+                        <RouterLink class="call" to="#">Заказать звонок</RouterLink>
                     </div>
                 </div>
                 <div class="header__average">
-                    <a class="logo" href="index.html">
+                    <RouterLink class="logo" to="/">
                         <img class="logo__img" :src="pictures.logo.url" :alt="pictures.name">
-                    </a>
+                    </RouterLink>
                     <div class="search">
                         <input type="search" placeholder="Поиск товаров">
                         <img :src="icons.search.url" alt="search">
@@ -80,15 +80,15 @@
                     <div class="header__lower-left">
                         <ul>
                             <li v-for="linksLower of headerLower" :key="linksLower">
-                                <a :href="linksLower.url">{{ linksLower.title }}</a>
+                                <RouterLink :to="linksLower.url">{{ linksLower.title }}</RouterLink>
                             </li>
-                            <a :href="promotions.url"><li>{{ promotions.title}}</li></a>
+                            <RouterLink :to="promotions.url"><li>{{ promotions.title}}</li></RouterLink>
                         </ul>
                     </div>
                     <div class="header__lower-right">
                         <ul>
-                            <li><a href="#">Франчайзинг</a></li>
-                            <a :href="vetclinic.url"><li>{{ vetclinic.title }}</li></a>
+                            <li><RouterLink :to="franchising.url">{{ franchising.title }}</RouterLink></li>
+                            <RouterLink :to="vetclinic.url"><li>{{ vetclinic.title }}</li></RouterLink>
                         </ul>
                     </div>
                 </nav>
@@ -98,7 +98,9 @@
 </template>
 
 <script>
-import { links, pictures, icons, headerLower, promotions, vetclinic } from '@/_config';
+import { 
+    links, pictures, icons, headerLower, promotions, vetclinic, franchising 
+} from '@/_config';
 
 export default {
     data() {
@@ -108,7 +110,8 @@ export default {
             icons,
             headerLower,
             promotions,
-            vetclinic
+            vetclinic,
+            franchising
         }
     }
 }
