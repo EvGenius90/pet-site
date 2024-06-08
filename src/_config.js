@@ -115,6 +115,9 @@ export const pictures =
         },
         imgSlide:{
             url: require('./assets/imgs/1c1.png')
+        },
+        noPage:{
+            url: require('./assets/imgs/404.svg')
         }
     }
 
@@ -141,5 +144,8 @@ export const icons =
     },
     arrowLeft:{
         url: require('./assets/icons/arrow_left.svg')
+    },
+    btnArrowRigth:{
+        url: require('./assets/icons/Group326.svg')
     }
 }

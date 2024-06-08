@@ -99,7 +99,13 @@
 
 <script>
 import { 
-    links, pictures, icons, headerLower, promotions, vetclinic, franchising 
+    links, 
+    pictures, 
+    icons, 
+    headerLower, 
+    promotions, 
+    vetclinic, 
+    franchising 
 } from '@/_config';
 
 export default {

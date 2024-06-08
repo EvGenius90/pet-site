@@ -18,7 +18,7 @@ a
     color: inherit
 
 ul
-    list-style: none
+    // list-style: none
     margin: 0
     padding: 0
 
@@ -87,6 +87,9 @@ ul
             justify-content: space-between
             max-width: 823px
             width: 100%
+            list-style: none
+            ul
+                list-style: none
             &-li:hover
                 color: #fe9015
         &-list
@@ -155,7 +158,7 @@ ul
             ul
                 position: absolute
                 z-index: 1
-                
+                list-style: none
                 background: #fff
                 width: 172px
                 display: block
@@ -280,6 +283,7 @@ ul
                 flex-wrap: wrap
                 font-weight: 500
                 font-size: 16px
+                list-style: none
                 @media(any-hover: hover)
                     li:hover
                         color: #fe9015
@@ -293,6 +297,7 @@ ul
             ul
                 display: flex
                 justify-content: space-between
+                list-style: none
                 @media(any-hover: hover)
                     li:hover
                         color: #fe9015
@@ -474,6 +479,7 @@ ul
             font-size: 12px
             line-height: 150%
             margin-bottom: 53px
+            list-style: none
             @media(any-hover: hover)
                 li:hover
                     color: #fe9015
@@ -572,3 +578,35 @@ ul
     border-radius: 10px
     box-shadow: 0 4px 12px 0 rgba(72, 105, 154, 0.24)
     &__inner
+
+.not-found
+    margin: 0 auto
+    &__content
+        text-align: center
+    &__img
+        margin-bottom: 20px
+    h2
+        margin: 0
+        margin-bottom: 50px
+    &__btn
+        background-color: #fe9015
+        color: #fff
+        max-width: 209px
+        border-radius: 6px
+        margin: 0 auto
+        a
+            display: flex
+            padding: 15px 20px
+            justify-content: center
+            img
+                margin-right: 9px
+
+.about-shop
+    &-title
+        margin-bottom: 13px
+    &-text
+        color: #848992
+        margin-bottom: 40px
+    &-products
+        ul
+            // list-style: inside
