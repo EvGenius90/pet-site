@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import HomeView from './pages/Home';
 import AboutView from './pages/about';
+import Articles from './pages/articles'
 import NoPage from './pages/NoPage';
 
 const routerHistory = createWebHistory()
@@ -16,8 +17,13 @@ const router = createRouter({
         },
         {
             path: '/about',
-            name: 'abot',
+            name: 'about',
             component: AboutView
+        },
+        {
+            path: '/articles',
+            name: 'articles',
+            component: Articles
         },
         {
             path: '/:CatchAll(.*)',
