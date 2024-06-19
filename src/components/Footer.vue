@@ -18,17 +18,17 @@
                 <div class="footer__lower">
                     <ul>
                         <li v-for="footerLower of footerLower" :key="footerLower">
-                            <a :href="footerLower.url">{{ footerLower.title }}</a>
+                            <router-link :to="footerLower.url">{{ footerLower.title }}</router-link>
                         </li>
-                        <a :href="promotions.url">
+                        <router-link :to="promotions.url">
                             <li class="footer__lower-promotions">{{ promotions.title }}</li>
-                        </a>
-                        <a href="#">
+                        </router-link>
+                        <router-link to="#">
                             <li>Статьи</li>
-                        </a>
-                        <a :href="vetclinic.url">
+                        </router-link>
+                        <router-link :to="vetclinic.url">
                             <li class="footer__lower-clinic">{{ vetclinic.title }}</li>
-                        </a>
+                        </router-link>
                     </ul>
                     <div class="footer__lower-countersline">
                         <p>© 2015-2019 Интернет-магазин зоотоваров «Сытая Морда»</p>

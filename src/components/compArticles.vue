@@ -1,6 +1,6 @@
 <template>
     <Tabs></Tabs>
-    <p>dsfsdfs</p>
+    <p>compArticles</p>
 </template>
 
 <script>

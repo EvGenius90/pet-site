@@ -1,10 +1,4 @@
 <template>
-    <!-- <ul>
-        <li v-for="link of links" :key="link">
-            <a :href="link.url">{{ link.title }}</a>
-            <img :src="link.img" :alt="link.logo">
-        </li>
-    </ul> -->
     <header class="header">
         <div class="container">
             <div class="header__inner">

@@ -2,8 +2,10 @@ import { createRouter, createWebHistory } from "vue-router";
 
 import HomeView from './pages/Home';
 import AboutView from './pages/about';
-import Articles from './pages/articles'
-import NoPage from './pages/NoPage';
+import Articles from './pages/articles';
+import Juridical from './pages/juridical';
+import NoPage from './pages/NoPage'
+import Promotions from './pages/promotions'
 
 const routerHistory = createWebHistory()
 
@@ -24,6 +26,16 @@ const router = createRouter({
             path: '/articles',
             name: 'articles',
             component: Articles
+        },
+        {
+            path: '/juridical',
+            name: 'juridical',
+            component: Juridical
+        },
+        {
+            path: '/promotions',
+            name: 'promotions',
+            component: Promotions
         },
         {
             path: '/:CatchAll(.*)',

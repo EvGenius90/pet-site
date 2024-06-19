@@ -1,6 +1,5 @@
 <template>
-    <main>
-    </main>
+    <h1>promotions</h1>
 </template>
 
 <script>
