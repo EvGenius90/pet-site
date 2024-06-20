@@ -104,19 +104,24 @@ export default {
             const dropDown = document.querySelectorAll('.juridical__drop-down_menu')
             const dropDownTitle = document.querySelectorAll('.juridical__drop-down_title')
             const dropDownSvg = document.querySelectorAll('.juridical__drop-down_svg')
+            const dropDownHidden = document.querySelectorAll('.juridical__drop-down_hidden')
             for(let i of dropDown){
                 if(e.target == i){
-                e.target.nextSibling.classList.toggle('dropDown')
+                    e.target.nextSibling.classList.toggle('dropDown')
+                    i.querySelector('.juridical__drop-down_svg').classList.toggle('rotate_svg')
                 }
             }
 
             for(let i of dropDownTitle){
+                
                 for(let j of dropDownSvg){
                     if(e.target == i || e.target == j){
                     const parent = e.target.parentNode
                     parent.nextSibling.classList.toggle('dropDown')
+                    i.nextSibling.classList.toggle('rotate_svg')
                     }
                 }
+                
             }
         }
     }
@@ -126,3 +131,4 @@ export default {
 <style>
 
 </style>
+
