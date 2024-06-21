@@ -7,7 +7,7 @@
                         <div>
                             <ul>
                                 <li class="header__upper-list more">
-                                    <routerLink class="header__upper-outline link-more" to="#">Ваш город</routerLink>
+                                    <routerLink class="header__upper-outline link-more" to="#" @click="more">Ваш город</routerLink>
                                     <ul class="header__upper-list-submenu submenu hidden-menu">
                                         <div class="all-close submenu__close close">&#215;</div>
                                         <p>Выберите ваш город</p>
@@ -32,7 +32,7 @@
                             <RouterLink :to="link.url">{{ link.title }}</RouterLink>
                         </li>
                         <li class="header__upper-more more">
-                            <RouterLink class="header__upper-more-vector link-more" to="#">Еще</RouterLink>
+                            <RouterLink class="header__upper-more-vector link-more" to="#" @click="more">Еще</RouterLink>
                             <ul class="submenu hidden-menu ">
                                 <li><RouterLink to="#">Бонусная программа</RouterLink></li>
                                 <li><RouterLink to="#">Для юр. лиц</RouterLink></li>
@@ -112,6 +112,24 @@ export default {
             promotions,
             vetclinic,
             franchising
+        }
+    },
+    methods:{
+        more(e){
+            const linkMore = document.querySelectorAll('.link-more')
+
+            // находит родительский элемент
+            const submenu = e.target.closest('.more')
+            // находит дочерний элемент
+            const zxc = submenu.querySelector('.submenu')
+            // меняет стиль окна
+            zxc.classList.toggle('visible-menu')
+        },
+        close(){
+            const modalClose = document.querySelectorAll('.modal-close')
+
+            orderCall.classList.add('d-none')
+            document.body.style.overflow = ''
         }
     }
 }
