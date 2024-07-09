@@ -1,10 +1,8 @@
 <template>
-    <div class="articles">
-        <div class="container">
-            <div class="articles__content">
-                <h1>Статьи</h1>
-                <compArticles/>
-            </div>
+    <div class="container">
+        <div class="articles__content">
+            <h1>Статьи</h1>
+            <compArticles/>
         </div>
     </div>
 </template>

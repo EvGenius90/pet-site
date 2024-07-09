@@ -49,7 +49,7 @@
                         <ul>
                             <li>
                                 <div class="juridical__requisites_bank">Юридический адрес организации</div>
-                                <div>РОССИЯ, ТЮМЕНСКАЯ ОБЛ, Г ТЮМЕНЬ, УЛ ПАРФЕНОВА, 17, 9</div>
+                                <div class="juridical__requisites_name">РОССИЯ, ТЮМЕНСКАЯ ОБЛ, Г ТЮМЕНЬ, УЛ ПАРФЕНОВА, 17, 9</div>
                             </li>
                             <li>
                                 <div class="juridical__requisites_bank">ИНН</div>
@@ -118,7 +118,7 @@ export default {
                     if(e.target == i || e.target == j){
                     const parent = e.target.parentNode
                     parent.nextSibling.classList.toggle('dropDown')
-                    i.nextSibling.classList.toggle('rotate_svg')
+                    // i.nextSibling.classList.toggle('rotate_svg')
                     }
                 }
                 
@@ -127,8 +127,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>
-

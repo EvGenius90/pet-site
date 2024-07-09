@@ -1,3 +1,17 @@
+@font-face 
+    font-family: "Montserrat-medium"
+    src: local('Montserrat')
+    src: url(../fonts/Montserrat-Medium.woff)
+    
+@font-face 
+    font-family: "Montserrat-bold"
+    src: local('Montserrat')
+    src: url(../fonts/Montserrat-Bold.woff)
+    
+@font-face 
+    font-family: "Montserrat-semiBold"
+    src: local('Montserrat')
+    src: url(../fonts/Montserrat-SemiBold.woff)
 
 
 
@@ -5,7 +19,7 @@
     box-sizing: border-box
 
 body
-    font-family: "Montserrat", sans-serif
+    font-family: "Montserrat-medium", sans-serif
 
 html
     scroll-behavior: smooth
@@ -406,6 +420,7 @@ ul
     border-top: 1px solid #c8cbd0
     padding-top: 51px
     position: relative
+    margin-top: 86px
     &__line
         position: absolute
         top: 136px
@@ -627,7 +642,6 @@ ul
 
 
 .juridical
-    margin-bottom: 86px
     &__title
         margin: 0
         margin-bottom: 50px
@@ -635,6 +649,7 @@ ul
         margin-bottom: 50px
         max-width: 700px
         line-height: 170%
+        font-size: 16px
     &__drop-down
         margin-bottom: 50px
         &_block
@@ -646,12 +661,16 @@ ul
             display: flex
             justify-content: space-between
             padding: 21px 30px
+        &_title
+            font-size: 20px
         &_svg
             transition: 0.2s
         &_hidden
             height: 0
             overflow: hidden
             cursor: default
+            font-size: 16px
+            line-height: 170%
     &__requisites
         &_title
             margin-bottom: 30px
@@ -668,6 +687,10 @@ ul
             width: 100%
             flex-grow: 1
             color: #848992
+            font-size: 16px
+        &_name
+            font-size: 16px
+            line-height: 170%
 
 .dropDown
     height: 100%
@@ -676,3 +699,33 @@ ul
 
 .rotate_svg
     transform: rotate(0.5turn)
+
+
+.comp-articles
+    &__list
+        display: flex
+        flex-wrap: wrap
+        li
+            width: 100%
+            display: flex
+            justify-content: center
+            justify-content: space-between
+            margin-bottom: 30px
+    &__block
+        // margin-right: 30px
+        width: 100%
+        text-align: center
+
+
+.information
+    display: flex
+    justify-content: space-between
+    margin-bottom: 50px
+    &__block
+        text-wrap: balance
+        max-width: 250px
+        font-size: 16px
+        line-height: 170%
+        img
+            width: 24px
+            height: 23px
