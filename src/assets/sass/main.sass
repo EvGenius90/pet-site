@@ -618,13 +618,18 @@ ul
 
 .about-shop
     &-title
+        font-size: 16px
         margin-bottom: 13px
     &-text
         color: #848992
         margin-bottom: 40px
+        font-size: 12px
+        line-height: 150%
     &-products
-        ul
-            // list-style: inside
+        &-text
+    ul
+        list-style-type: "• " 
+        list-style-position: inside
 
 .tabs
     display: flex
@@ -691,6 +696,21 @@ ul
         &_name
             font-size: 16px
             line-height: 170%
+
+
+.reviews
+    &__links
+        display: flex
+        justify-content: space-between
+        margin-bottom: 50px
+    &__link
+        max-width: 287px
+        width: 100%
+        text-align: center
+        padding-top: 30px
+        padding-bottom: 40px
+        border: 1px solid #c8cbd0
+    
 
 .dropDown
     height: 100%

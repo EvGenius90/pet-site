@@ -1,5 +1,5 @@
 <template>
-    <header class="header">
+    <header class="header" :scroll="asd">
         <div class="container">
             <div class="header__inner">
                 <div class="header__upper">
@@ -130,6 +130,133 @@ export default {
 
             orderCall.classList.add('d-none')
             document.body.style.overflow = ''
+        },
+        qwe(){
+            const header = document.querySelector('.header')
+            if(header.scrollY > 20){
+                console.log('goood')
+            }
+        },
+        myHeader(){
+            const header = document.querySelector('.header')
+            const headerUpper = document.querySelector('.header__upper')
+            const headerLower = document.querySelector('.header__lower')
+            const headerAverage = document.querySelector('.header__average')
+            const logoImg = document.querySelector('.logo__img')
+            const search = document.querySelector('.search')
+            const profile = document.querySelector('.profile')
+            const basket = document.querySelector('.basket')
+            const main = document.querySelector('.main')
+            const up = document.querySelector('.up')
+
+            const hHeight = header.offsetHeight
+            
+            if(window.scrollY <= 200){
+                console.log('goood')
+            }
+            // const scrollY = window.scrollY
+
+            // document.addEventListener('scroll', function(){
+
+                
+
+                // const headerInner = document.querySelector('.header__inner')
+                // main.style.marginTop = `${hHeight}px`;
+
+                // if(window.scrollY >= 200){
+                    
+                //     up.style.cssText = `
+                //     bottom: 48px
+                //     `
+
+                //     headerInner.classList.add('mini-header')
+
+                //     headerAverage.classList.add('mini-average')
+
+                //     headerAverage.style.cssText = `
+                //     align-items: flex-start;
+                //     padding: 15px 0
+                //     `
+
+                //     logoImg.style.cssText = `
+                //     height: 60px;
+                //     margin-top: -8px;
+                //     `
+
+                //     search.style.cssText = `
+                //     height: 50px
+                //     `
+                    
+                //     profile.style.cssText = `
+                //     height: 50px
+                //     `
+
+                //     basket.style.cssText = `
+                //     height: 50px
+                //     `
+
+                //     headerUpper.classList.add('d-none')
+
+                //     headerLower.classList.add('d-none')
+
+                //     header.style.cssText = `
+                //     margin-top: 0px
+                //     `
+
+                // }
+                // else{
+
+                //     up.style.cssText = `
+                //     bottom: -48px
+                //     `
+
+                //     headerInner.classList.remove('mini-header')
+
+                //     main.style.marginTop = null;
+
+                //     headerAverage.classList.remove('mini-average')
+
+                //     headerAverage.style.cssText = `
+                //     align-items: flex-end;
+                //     padding: 9px 0
+                //     `
+
+                //     logoImg.style.cssText = `
+                //     heght: 73px;
+                //     margin-top: 0px;
+                //     `
+
+                //     search.style.cssText = `
+                //     height: 60px
+                //     `
+
+                //     profile.style.cssText = `
+                //     height: 60px
+                //     `
+
+                //     basket.style.cssText = `
+                //     height: 60px
+                //     `
+
+                //     headerUpper.classList.remove('d-none')
+
+                //     headerLower.classList.remove('d-none')
+
+                //     header.style.cssText = `
+                //     margin-top: 17px
+                //     `
+
+                // }
+
+            // })
+        }
+    },
+    computed:{
+        asd(){
+            const header = document.querySelector('.header')
+            if(window.scrollY > 20){
+                console.log('goood')
+            }
         }
     }
 }

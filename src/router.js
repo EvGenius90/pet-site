@@ -7,6 +7,7 @@ import Juridical from './pages/juridical';
 import NoPage from './pages/NoPage'
 import Promotions from './pages/promotions'
 import Contacts from './pages/contacts'
+import Reviews from './pages/reviews'
 
 const routerHistory = createWebHistory()
 
@@ -42,6 +43,11 @@ const router = createRouter({
             path: '/contacts',
             name: 'contacts',
             component: Contacts
+        },
+        {
+            path: '/reviews',
+            name: 'reviews',
+            component: Reviews
         },
         {
             path: '/:CatchAll(.*)',
