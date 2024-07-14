@@ -149,3 +149,9 @@ export const icons =
         url: require('./assets/icons/Group326.svg')
     }
 }
+
+export const agreements = 
+{
+    title: 'Условия соглашения',
+    url: '/agreements'
+}

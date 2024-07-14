@@ -8,6 +8,7 @@ import NoPage from './pages/NoPage'
 import Promotions from './pages/promotions'
 import Contacts from './pages/contacts'
 import Reviews from './pages/reviews'
+import Agreements from './pages/agreements'
 
 const routerHistory = createWebHistory()
 
@@ -48,6 +49,11 @@ const router = createRouter({
             path: '/reviews',
             name: 'reviews',
             component: Reviews
+        },
+        {
+            path: '/agreements',
+            name: 'agreements',
+            component: Agreements
         },
         {
             path: '/:CatchAll(.*)',

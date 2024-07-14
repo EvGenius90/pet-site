@@ -28,6 +28,7 @@
                     </a>
                 </div>
             </div>
+            <img class="reviews__big-image" src="../assets/imgs/Screenshot_9 2.png" alt="">
         </div>
     </div>
 </template>

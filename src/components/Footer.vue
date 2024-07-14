@@ -33,7 +33,7 @@
                     <div class="footer__lower-countersline">
                         <p>© 2015-2019 Интернет-магазин зоотоваров «Сытая Морда»</p>
                         <p>Стоимость товаров на сайте не являеся публичой офертой</p>
-                        <p>Условия соглашения</p>
+                        <p><router-link :to="agreements.url">Условия соглашения</router-link></p>
                         <div class="footer__lower-countersline-phone">
                             <img :src="icons.phone.url" alt="phone">
                             <p class="footer__lower-countersline-phone-number">+7 (3452) 59-49-45</p>
@@ -48,7 +48,7 @@
 
 <script>
 
-import { icons, footerLower, promotions, vetclinic } from '@/_config'
+import { icons, footerLower, promotions, vetclinic,  agreements } from '@/_config'
 
 export default {
     data(){
@@ -56,7 +56,8 @@ export default {
             icons,
             footerLower,
             promotions,
-            vetclinic
+            vetclinic,
+            agreements
         }
     }
 }
