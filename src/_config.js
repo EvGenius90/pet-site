@@ -88,6 +88,17 @@ export const footerLower = [
     }
 ]
 
+export const headerMore = [
+    {
+        title: 'Бонусная программа',
+        url: '/bonus'
+    },
+    {
+        title: 'Для юр. лиц',
+        url: '/juridical'
+    }
+]
+
 
 export const promotions = {
     title: 'Акции',

@@ -33,9 +33,12 @@
                         </li>
                         <li class="header__upper-more more">
                             <RouterLink class="header__upper-more-vector link-more" to="#" @click="more">Еще</RouterLink>
-                            <ul class="submenu hidden-menu ">
-                                <li><RouterLink to="#">Бонусная программа</RouterLink></li>
-                                <li><RouterLink to="#">Для юр. лиц</RouterLink></li>
+                            <ul class="submenu hidden-menu">
+                                <li v-for="headerMore of headerMore" :key="headerMore">
+                                    <RouterLink :to="headerMore.url">{{ headerMore.title }}</RouterLink>
+                                </li>
+                                <!-- <li><RouterLink to="#">Бонусная программа</RouterLink></li>
+                                <li><RouterLink to="#">Для юр. лиц</RouterLink></li> -->
                                 
                             </ul>
                         </li>
@@ -99,7 +102,8 @@ import {
     headerLower, 
     promotions, 
     vetclinic, 
-    franchising 
+    franchising,
+    headerMore
 } from '@/_config';
 
 export default {
@@ -111,7 +115,8 @@ export default {
             headerLower,
             promotions,
             vetclinic,
-            franchising
+            franchising,
+            headerMore
         }
     },
     methods:{
