@@ -751,7 +751,73 @@ ul
             line-height: 170%
         p:not(:last-child)
             margin-bottom: 20px
-    
+
+
+.about
+    &__image
+        width: 100%
+        margin-bottom: 100px
+    .tabs
+        display: block
+        &__items
+            margin-bottom: 40px
+            height: 50px
+            display: flex
+            border-bottom: 1px solid #c8cbd0
+            font-size: 24px
+            // justify-content: space-between
+        &__item
+        &__item:not(:last-child)
+            margin-right: 40px
+        &__body
+            margin-bottom: 100px
+        &__block
+            position: relative
+            display: none
+        &__block:target
+            display: flex
+            justify-content: space-around
+            flex-wrap: wrap
+        &__block::before
+            content: ""
+            height: 4px
+            width: 244px
+            position: absolute
+            top: -49px
+        &__block:nth-child(1):before
+            // background: black
+            border-bottom: 4px solid black
+            left: 0
+        &__block:nth-child(2):before
+            border-bottom: 4px solid black
+            left: 278px
+    &__characteristics
+        display: flex
+        justify-content: space-between
+        margin-bottom: 100px
+        p
+            max-width: 240px
+            font-size: 20px
+            line-height: 140%
+            // text-wrap: pretty
+        span
+            color: #fe9015
+            font-family: "Montserrat-bold"
+            font-size: 36px
+    &__history
+        width: 62%
+        h2
+            margin: 0
+            margin-bottom: 50px
+            font-family: "Montserrat-bold"
+            font-size: 36px
+            line-height: 140%
+        ul
+            list-style-position: inside
+            line-height: 170%
+            li::marker
+                font-size: 11px
+            
 
 .dropDown
     height: 100%
