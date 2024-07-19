@@ -758,39 +758,41 @@ ul
         width: 100%
         margin-bottom: 100px
     .tabs
-        display: block
+        &__inner
+            margin-bottom: 103px
         &__items
-            margin-bottom: 40px
-            height: 50px
-            display: flex
-            border-bottom: 1px solid #c8cbd0
-            font-size: 24px
-            // justify-content: space-between
-        &__item
-        &__item:not(:last-child)
-            margin-right: 40px
-        &__body
-            margin-bottom: 100px
-        &__block
             position: relative
-            display: none
-        &__block:target
             display: flex
-            justify-content: space-around
+            font-size: 24px
             flex-wrap: wrap
-        &__block::before
-            content: ""
-            height: 4px
-            width: 244px
-            position: absolute
-            top: -49px
-        &__block:nth-child(1):before
-            // background: black
+            width: 100%
+            hr
+                position: absolute
+                z-index: -1
+                top: 53px
+                width: 100%
+                border: 1px solid #c8cbd0
+                margin: 0
+        &__block
+            display: none
+            order: 1
+            width: 100%
+            margin-top: 40px
+        &__radio
+            display: none
+        &__radio:checked+.tabs__label
+            font-family: "Montserrat-bold"
             border-bottom: 4px solid black
-            left: 0
-        &__block:nth-child(2):before
-            border-bottom: 4px solid black
-            left: 278px
+        &__radio:checked+.tabs__label+.tabs__block
+            display: flex
+            justify-content: space-between
+            flex-wrap: wrap
+        &__label:not(:last-child)
+            margin-right: 40px
+        &__label
+            padding-bottom: 22px
+            cursor: pointer
+    &__information
     &__characteristics
         display: flex
         justify-content: space-between
@@ -817,7 +819,7 @@ ul
             line-height: 170%
             li::marker
                 font-size: 11px
-            
+
 
 .dropDown
     height: 100%

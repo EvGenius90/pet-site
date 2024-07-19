@@ -2,39 +2,46 @@
     <div class="container">
         <div class="about">
             <img class="about__image" src="../assets/imgs/Frame 483.png" alt="">
-            <div class="about__tabs tabs">
-                <nav class="tabs__items">
-                    <a class="tabs__item" href="#tab_01"><span>Команда магазина</span></a>
-                    <a class="tabs__item" href="#tab_02"><span>Команда ветклиники</span></a>
-                </nav>
-                <div class="tabs__body">
-                    <div id="tab_01" class="tabs__block">
-                        <img src="../assets/imgs/Frame 485.png" alt="">
-                        <img src="../assets/imgs/Frame 486.png" alt="">
-                        <img src="../assets/imgs/Frame 487.png" alt="">
-                        <img src="../assets/imgs/Frame 488.png" alt="">
-                        <img src="../assets/imgs/Frame 489.png" alt="">
-                        <img src="../assets/imgs/Frame 490.png" alt="">
-                        <img src="../assets/imgs/Frame 491.png" alt="">
-                        <img src="../assets/imgs/Frame 492.png" alt="">
-                        <img src="../assets/imgs/Frame 493.png" alt="">
-                        <img src="../assets/imgs/Frame 494.png" alt="">
-                        <img src="../assets/imgs/Frame 495.png" alt="">
-                        <img src="../assets/imgs/Frame 496.png" alt="">
-                        <img src="../assets/imgs/Frame 497.png" alt="">
-                        <img src="../assets/imgs/Frame 498.png" alt="">
-                        <img src="../assets/imgs/Frame 499.png" alt="">
-                        <img src="../assets/imgs/Frame 501.png" alt="">
-                        <img src="../assets/imgs/Frame 502.png" alt="">
-                        <img src="../assets/imgs/Frame 503.png" alt="">
-                    </div>
-                    <div id="tab_02" class="tabs__block">
-                        <img src="../assets/imgs/Frame 485.png" alt="">
-                        <img src="../assets/imgs/Frame 486.png" alt="">
-                        <img src="../assets/imgs/Frame 487.png" alt="">
-                        <img src="../assets/imgs/Frame 488.png" alt="">
-                        <img src="../assets/imgs/Frame 489.png" alt="">
-                    </div>
+            <div class="about__tabs tabss">
+                <div class="tabs__inner">
+                    <nav class="tabs__items">
+                        <input class="tabs__radio" type="radio" name="select" id="tab_01" >
+                        <label class="tabs__label" for="tab_01">Команда магазина</label>
+                        
+                        <div class="tabs__block">
+                            <img src="../assets/imgs/Frame 485.png" alt="">
+                            <img src="../assets/imgs/Frame 486.png" alt="">
+                            <img src="../assets/imgs/Frame 487.png" alt="">
+                            <img src="../assets/imgs/Frame 488.png" alt="">
+                            <img src="../assets/imgs/Frame 489.png" alt="">
+                            <img src="../assets/imgs/Frame 490.png" alt="">
+                            <img src="../assets/imgs/Frame 491.png" alt="">
+                            <img src="../assets/imgs/Frame 492.png" alt="">
+                            <img src="../assets/imgs/Frame 493.png" alt="">
+                            <img src="../assets/imgs/Frame 494.png" alt="">
+                            <img src="../assets/imgs/Frame 495.png" alt="">
+                            <img src="../assets/imgs/Frame 496.png" alt="">
+                            <img src="../assets/imgs/Frame 497.png" alt="">
+                            <img src="../assets/imgs/Frame 498.png" alt="">
+                            <img src="../assets/imgs/Frame 499.png" alt="">
+                            <img src="../assets/imgs/Frame 501.png" alt="">
+                            <img src="../assets/imgs/Frame 502.png" alt="">
+                            <img src="../assets/imgs/Frame 503.png" alt="">
+                        </div>
+                        
+                        <input class="tabs__radio" type="radio" name="select" id="tab_02">
+                        <label class="tabs__label" for="tab_02">Команда ветклиники</label>
+                        
+                        <div class="tabs__block">
+                            <img src="../assets/imgs/Frame 485.png" alt="">
+                            <img src="../assets/imgs/Frame 486.png" alt="">
+                            <img src="../assets/imgs/Frame 487.png" alt="">
+                            <img src="../assets/imgs/Frame 488.png" alt="">
+                            <img src="../assets/imgs/Frame 489.png" alt="">
+                        </div>
+                        <hr>
+                    </nav>
+                    
                 </div>
                 <div class="about__information">
                     <div class="about__characteristics">
