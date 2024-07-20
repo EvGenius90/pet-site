@@ -63,6 +63,33 @@
                         </ul>
                     </div>
                 </div>
+                <div class="about__slider">
+                    <div class="about__slider_left" @click="left">
+                        <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M1.01791 8.4521L8.55199 0.917334L9.96875 2.33423L2.43468 9.86899L1.01791 8.4521Z" fill="#FE9015"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M2.44367 7.02563L9.96673 14.5721L8.54688 15.9861L1.02381 8.43957L2.44367 7.02563Z" fill="#FE9015"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M20.3556 9.45874L2.35547 9.45874L2.35547 7.45874L20.3556 7.45874L20.3556 9.45874Z" fill="#FE9015"/>
+                        </svg>
+                    </div>
+                    <div class="about__slider_right" @click="right">
+                        <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M19.9821 7.54807L12.448 15.0826L11.0312 13.6658L18.5653 6.13121L19.9821 7.54807Z" fill="#FE9015"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5563 8.97437L11.0333 1.42785L12.4531 0.013916L19.9761 7.56043L18.5563 8.97437Z" fill="#FE9015"/>
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M0.644443 6.54126L18.6445 6.54126L18.6445 8.54126L0.644444 8.54126L0.644443 6.54126Z" fill="#FE9015"/>
+                        </svg>
+                    </div>
+                    <div class="about__slider_inner">
+                        <img class="about__slider_img opas" src="../assets/imgs/15 1.png" alt="">
+                        <img class="about__slider_img " src="../assets/imgs/15 1.png" alt="">
+                        <img class="about__slider_img opas" src="../assets/imgs/15 1.png" alt="">
+                        <img class="about__slider_img opas" src="../assets/imgs/15 1.png" alt="">
+                        <img class="about__slider_img opas" src="../assets/imgs/15 1.png" alt="">
+                    </div>
+                </div>
+                <div class="about__video">
+                    <h2>Видеоэкскурсия по магазину</h2>
+
+                </div>
             </div>
         </div>
     </div>
@@ -70,7 +97,50 @@
 
 <script>
 export default {
+    data(){
+        return{
+            offset: -980,
+            num: 0
+        }
+    },
+    methods:{
+        left(){
+            let slider = document.querySelector('.about__slider_inner')
+            let img = document.querySelectorAll('.about__slider_img')
 
+            if(this.offset >= 0){
+                this.offset = -980
+                this.num = 0
+                img[this.num + 1].classList.remove('opas')
+            }
+
+            img[this.num].classList.remove('opas')
+            img[this.num + 1].classList.add('opas')
+            --this.num
+
+            this.offset += 980
+
+            slider.style.left = this.offset + 'px'
+        },
+        right(){
+            let slider = document.querySelector('.about__slider_inner')
+            let img = document.querySelectorAll('.about__slider_img')
+
+            if (this.offset <= -3920) {
+                this.offset = -2940
+                this.num = 2
+                img[this.num + 2].classList.remove('opas')
+            }
+            
+            img[this.num + 2].classList.remove('opas')
+            img[this.num + 1].classList.add('opas')
+            ++this.num
+            
+            this.offset -= 980
+
+            slider.style.left = this.offset + 'px'
+        }
+    }
 }
 </script>
 

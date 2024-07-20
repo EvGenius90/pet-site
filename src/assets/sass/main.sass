@@ -20,6 +20,7 @@
 
 body
     font-family: "Montserrat-medium", sans-serif
+    overflow-x: hidden
 
 html
     scroll-behavior: smooth
@@ -793,6 +794,7 @@ ul
             padding-bottom: 22px
             cursor: pointer
     &__information
+        margin-bottom: 100px
     &__characteristics
         display: flex
         justify-content: space-between
@@ -819,6 +821,47 @@ ul
             line-height: 170%
             li::marker
                 font-size: 11px
+    &__slider
+        position: relative
+        height: 532px
+        max-width: 950px
+        margin: 0 auto
+        margin-bottom: 130px
+        &_img
+            transition: 0.3s
+        &_inner
+            display: flex
+            position: relative
+            z-index: -1
+            left: -980px
+            transition: 1s
+            img:not(:last-child)
+                margin-right: 30px
+        &_left
+            position: absolute
+            left: -22px
+            top: 248px
+            background: white
+            border-radius: 100%
+            text-align: center
+            padding-top: 15px
+            width: 48px
+            height: 48px
+            cursor: pointer
+        &_right
+            position: absolute
+            right: -22px
+            top: 248px
+            background: white
+            border-radius: 100%
+            text-align: center
+            padding-top: 15px
+            width: 48px
+            height: 48px
+            cursor: pointer
+
+.opas
+    opacity: 0.3
 
 
 .dropDown
