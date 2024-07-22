@@ -25,6 +25,73 @@ export const links = [
     },
 ]
 
+export const productsCatsUrl = {
+    url: '/products_Cats'
+}
+
+export const productsCats = [
+    {
+        name: 'cat_food',
+        url: require('./assets/icons/cat_food.svg'),
+        text: 'Корм для кошек'
+    },
+    {
+        name: 'Treats_vitamins',
+        url: require('./assets/icons/Treats_vitamins.svg'),
+        text: 'Лакомства и витамины'
+    },
+    {
+        name: 'Toilet_fillers',
+        url: require('./assets/icons/Toilet_fillers.svg'),
+        text: 'Наполнители для туалета'
+    },
+    {
+        name: 'Hygiene_products',
+        url: require('./assets/icons/Hygiene_products.svg'),
+        text: 'Средства гигиены'
+    },
+    {
+        name: 'Clothes_for_cats',
+        url: require('./assets/icons/Clothes_for_cats.svg'),
+        text: 'Одежда для кошек'
+    },
+    {
+        name: 'Ammunition',
+        url: require('./assets/icons/Ammunition.svg'),
+        text: 'Амуниция'
+    },
+    {
+        name: 'Toys',
+        url: require('./assets/icons/Toys.svg'),
+        text: 'Игрушки'
+    },
+    {
+        name: 'houses',
+        url: require('./assets/icons/houses.svg'),
+        text: 'Когтеточки, домики'
+    },
+    {
+        name: 'Grooming ',
+        url: require('./assets/icons/Grooming .svg'),
+        text: 'Груминг и косметика'
+    },
+    {
+        name: 'Bowls',
+        url: require('./assets/icons/Bowls.svg'),
+        text: 'Миски'
+    },
+    {
+        name: 'Cages',
+        url: require('./assets/icons/Cages.svg'),
+        text: 'Клетки и переноски'
+    },
+    {
+        name: 'Toilets',
+        url: require('./assets/icons/Toilets.svg'),
+        text: 'Туалеты'
+    }
+]
+
 
 export const headerLower = [
     {

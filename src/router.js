@@ -10,6 +10,8 @@ import Contacts from './pages/contacts'
 import Reviews from './pages/reviews'
 import Agreements from './pages/agreements'
 import Bonus from './pages/bonus'
+import Cats from './pages/cats'
+import Products_Cats from './pages/products_Cats'
 
 const routerHistory = createWebHistory()
 
@@ -60,6 +62,16 @@ const router = createRouter({
             path: '/bonus',
             name: 'bonus',
             component: Bonus
+        },
+        {
+            path: '/cats',
+            name: 'cats',
+            component: Cats
+        },
+        {
+            path: '/products_Cats',
+            name: 'products_Cats',
+            component: Products_Cats
         },
         {
             path: '/:CatchAll(.*)',

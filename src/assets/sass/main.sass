@@ -245,7 +245,9 @@ ul
             margin-right: 10px
             cursor: pointer
             img
-                margin-right: 5px
+                margin-right: 8px
+        .profile:hover
+            border: 1px solid #fe9015
         
         .basket
             position: relative
@@ -260,7 +262,7 @@ ul
             border-radius: 5px
             cursor: pointer
             img
-                margin-right: 5px
+                margin-right: 14px
             &__products
                 position: absolute
                 top: 8px
@@ -276,9 +278,8 @@ ul
                 font-size: 12px
                 line-height: 108%
                 color: #fff
-        // .basket:hover
-        //     .basket-vidget
-        //         display: block
+        .basket:hover
+            border: 1px solid #fe9015
         .logo
             margin-right: 23px
             img
@@ -705,12 +706,17 @@ ul
         justify-content: space-between
         margin-bottom: 50px
     &__link
-        max-width: 287px
         width: 100%
         text-align: center
         padding-top: 30px
         padding-bottom: 40px
         border: 1px solid #c8cbd0
+        margin-left: -1px
+    &__link:hover
+        position: relative
+        border: 1px solid #fe9015
+        p
+            color: #fe9015
     &__big-image
         width: 100%
 
@@ -860,6 +866,44 @@ ul
             height: 48px
             cursor: pointer
 
+
+.cats
+    h1
+        margin-bottom: 50px
+    &__categories
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        margin-bottom: 140px
+    &__category
+        text-align: center
+        font-size: 16px
+        line-height: 150%
+        border: 1px solid #c8cbd0
+        padding-top: 40px
+        padding-bottom: 30px
+        margin-top: -1px
+        margin-left: -1px
+        max-height: 193px
+        img
+            padding-bottom: 30px
+    &__category:hover
+        position: relative
+        border: 1px solid #fe9015
+        p
+            color: #fe9015
+    &__article
+        h3
+            font-size: 16px
+            margin-bottom: 15px
+        p, ul
+            font-size: 12px
+            line-height: 150%
+            color: #848992
+        ul
+            list-style-position: inside
+            li::marker
+                font-size: 9px
+
 .opas
     opacity: 0.3
 
@@ -887,6 +931,7 @@ ul
         // margin-right: 30px
         width: 100%
         text-align: center
+        
 
 
 .information

@@ -37,8 +37,6 @@
                                 <li v-for="headerMore of headerMore" :key="headerMore">
                                     <RouterLink :to="headerMore.url">{{ headerMore.title }}</RouterLink>
                                 </li>
-                                <!-- <li><RouterLink to="#">Бонусная программа</RouterLink></li>
-                                <li><RouterLink to="#">Для юр. лиц</RouterLink></li> -->
                                 
                             </ul>
                         </li>
@@ -59,7 +57,7 @@
                     </div>
                     <div class="profile">
                         <img :src="icons.profile.url" alt="profile">
-                        <span></span>
+                        <span>Войти</span>
                     </div>
                     <div class="basket">
                         <img :src="icons.basket.url" alt="basket">
