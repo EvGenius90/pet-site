@@ -2,9 +2,9 @@
     <div class="cats">
         <div class="container">
             <h1>Товары для кошек</h1>
-            <div class="cats__categories">
+            <div class="cats__categories" @click="zxc">
                 <RouterLink :to="productsCatsUrl.url" v-for="productsCats of productsCats" :key="productsCats">
-                    <div class="cats__category">
+                    <div :class="'cats__category ' + productsCats.class">
                             <img :src="productsCats.url" alt="">
                             <p>{{ productsCats.text }}</p>
                     </div>
@@ -53,7 +53,13 @@ export default {
     },
     methods:{
         zxc(e){
-            console.log(e.target)
+            if(e.target.closest('.cat_food')){ 
+                console.log('goood')
+            }
+            else{
+                console.log('not good')
+            }
+            
         }
     }
 }

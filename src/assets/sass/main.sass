@@ -904,6 +904,87 @@ ul
             li::marker
                 font-size: 9px
 
+
+.products_cats
+    h1
+        margin-bottom: 50px
+    &__left-column
+        float: left
+        p
+            margin-bottom: 20px
+        &_block-price
+            position: relative
+            display: flex
+            margin-bottom: 20px
+        &_left
+        //     width: 100px
+        //     height: 40px
+        // &_right
+        //     width: 100px
+        //     height: 40px
+        &_left::before
+            content: "От"
+            position: absolute
+            top: 12px
+            left: 16px
+            color: #c8cbd0
+        &_right::before
+            content: "До"
+            position: relative
+            left: 40px
+            color: #c8cbd0
+        &_input-number
+            padding: 13px 0 13px 42px
+            width: 100px
+            height: 40px
+            border: 1px solid #c8cbd0
+            border-radius: 5px
+            outline: none
+            font-size: 14px
+        &_input-number::-webkit-outer-spin-button,
+        &_input-number::-webkit-inner-spin-button 
+            -webkit-appearance: none
+        &_slider
+            position: relative
+            height: 2px
+            background: #c8cbd0
+        &_progress
+            height: 2px
+            position: absolute
+            left: 0%
+            right: 25%
+            background: #fe9015
+        &_range-input
+            position: relative
+            input
+                position: absolute
+                top: -8px
+                width: 100%
+                background: none
+                -webkit-appearance: none
+                pointer-events: none
+                font-size: 14px
+            input::-webkit-slider-thumb
+                -webkit-appearance: none
+                height: 16px
+                width: 16px
+                border-radius: 50%
+                background: #fe9015
+                cursor: pointer
+                pointer-events: auto
+            input::-moz-range-thumb
+                -moz-appearance: none
+                height: 16px
+                width: 16px
+                border-radius: 50%
+                background: #fe9015
+                cursor: pointer
+                pointer-events: auto
+
+
+
+
+
 .opas
     opacity: 0.3
 
