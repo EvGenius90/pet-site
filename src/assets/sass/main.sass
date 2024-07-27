@@ -905,13 +905,32 @@ ul
                 font-size: 9px
 
 
+
+
 .products_cats
     h1
         margin-bottom: 50px
     &__left-column
         float: left
-        p
+        width: 244px
+        &_column-price
+            margin-bottom: 40px
+        &_block
+            display: flex
+            cursor: pointer
             margin-bottom: 20px
+            img
+                margin-right: 14px
+            p
+                font-family: "Montserrat-bold"
+                font-size: 20px
+            &_svg
+                transition: 0.4s
+        &_opening
+            height: auto
+            // max-height: 100%
+            // transition: height 0.5s 
+            transition: max-height 0.8s cubic-bezier(1, 0, 1, 0)
         &_block-price
             position: relative
             display: flex
@@ -946,16 +965,18 @@ ul
             -webkit-appearance: none
         &_slider
             position: relative
+            width: 220px
             height: 2px
             background: #c8cbd0
         &_progress
             height: 2px
             position: absolute
             left: 0%
-            right: 25%
+            right: 0%
             background: #fe9015
         &_range-input
             position: relative
+            width: 220px
             input
                 position: absolute
                 top: -8px
@@ -980,9 +1001,54 @@ ul
                 background: #fe9015
                 cursor: pointer
                 pointer-events: auto
+        &_column-type
+            margin-bottom: 40px
+        &_opening
+            // display: flex
+            // flex-direction: column
+        &_checkboxes
+            margin-bottom: 20px
+            font-size: 14px
+            input[type="checkbox"]
+            p
+                margin-right: 7px
+            span
+                color: #848992
+            .custom-checkbox 
+                position: absolute
+                z-index: -1
+                opacity: 0
+            .custom-checkbox + label
+                display: inline-flex
+                align-items: center
+            .custom-checkbox+label::before 
+                content: ''
+                display: inline-block
+                width: 16px
+                height: 16px
+                flex-shrink: 0
+                flex-grow: 0
+                border: 1px solid #adb5bd
+                border-radius: 0.25em
+                margin-right: 18px
+                background-repeat: no-repeat
+                background-position: center center
+                background-size: 50% 50%
+            .custom-checkbox:checked+label::before 
+                border-color: #fe9015
+                background-color: #fe9015
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e")
+        &_column-age
+            margin-bottom: 40px
+                
 
 
-
+.hidden-column
+    // height: 0
+    overflow: hidden
+    // transition: height 0.3s ease-in
+    height: 0
+    transition: height 0.8s cubic-bezier(0, 1, 0, 1)
 
 
 .opas
