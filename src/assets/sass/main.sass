@@ -927,20 +927,15 @@ ul
             &_svg
                 transition: 0.4s
         &_opening
-            height: auto
-            // max-height: 100%
-            // transition: height 0.5s 
-            transition: max-height 0.8s cubic-bezier(1, 0, 1, 0)
+            display: grid
+            grid-template-rows: 1fr
+            overflow: hidden
+            transition: grid-template-rows 0.6s
         &_block-price
             position: relative
             display: flex
             margin-bottom: 20px
         &_left
-        //     width: 100px
-        //     height: 40px
-        // &_right
-        //     width: 100px
-        //     height: 40px
         &_left::before
             content: "От"
             position: absolute
@@ -977,6 +972,7 @@ ul
         &_range-input
             position: relative
             width: 220px
+            margin-bottom: 10px
             input
                 position: absolute
                 top: -8px
@@ -1004,8 +1000,6 @@ ul
         &_column-type
             margin-bottom: 40px
         &_opening
-            // display: flex
-            // flex-direction: column
         &_checkboxes
             margin-bottom: 20px
             font-size: 14px
@@ -1044,11 +1038,7 @@ ul
 
 
 .hidden-column
-    // height: 0
-    overflow: hidden
-    // transition: height 0.3s ease-in
-    height: 0
-    transition: height 0.8s cubic-bezier(0, 1, 0, 1)
+    grid-template-rows: 0fr
 
 
 .opas
