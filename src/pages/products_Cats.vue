@@ -191,14 +191,16 @@
                 
             </div>
             <div class="products_cats__right-column">
-                <card></card>
+                <div class="card-wrapper" v-for="item of items" :key="item.id">
+                    <card :promotion="item.promotion" :imgUrl="item.img" :desc="item.descr" :price="item.price" :priceDiscound="item.priceDiscound" :priceOld="item.priceOld"></card>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import Item from '@/components/seeders/items'
+import items from '@/components/seeders/items'
 import Card from '@/components/UI/card'
 
 export default {
@@ -206,6 +208,7 @@ export default {
 
     data(){
         return{
+            items: items,
             minValue: '',
             maxValue: ''
         }
@@ -236,12 +239,17 @@ export default {
             this.maxValue = maxVal
         },
         hidden(e){
+            // Если клик был по блоку, то блок открывается или закрывается 
             if(e.target.closest('.products_cats__left-column_block')){
 
+                // переменная соседнего элемента
                 const opening = e.target.closest('.products_cats__left-column_block').nextElementSibling
+                // переменная дочерней svg
                 const childSvg = e.target.closest('.products_cats__left-column_block').querySelector('.products_cats__left-column_block_svg')
 
+                // Разворачивает SVG
                 childSvg.classList.toggle('rotate_svg')
+                // Открывает или закрывает блок
                 opening.classList.toggle('hidden-column')
             }
         }
