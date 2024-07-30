@@ -26,6 +26,9 @@ export default[
         priceOld: 4500,
         priceDiscound: 3651,
         promotion: 33,
+        weightValue1: '0.8',
+        weightValue2: '2',
+        weightValue3: '4',
     },
     {
         id: 4,
@@ -57,9 +60,14 @@ export default[
         id: 7,
         alias: 'simparika',
         title: 'simparika',
-        img: require('@/assets/imgs/pukhoderka.png'),
-        descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
-        price: 3651
+        img: require('@/assets/imgs/korm.png'),
+        descr: 'Влажный корм Royal Canin British shorthair кусочки в соусе для британских кошек  ',
+        priceOld: 4500,
+        priceDiscound: 3651,
+        promotion: 33,
+        weightValue1: '0.8',
+        weightValue2: '2',
+        weightValue3: '4',
     },
     {
         id: 8,

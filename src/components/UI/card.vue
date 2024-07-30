@@ -9,8 +9,16 @@
             </div>
             <p class="card__desc">{{ desc }}</p>
         </a>
+        <div class="select-block" v-if="weightValue1">
+            <select class="select" name="choice" >
+                <option value="first">{{ weightValue1 + ' кг'}}</option>
+                <option value="second" selected>{{ weightValue2 + ' кг'}}</option>
+                <option value="third">{{ weightValue3 + ' кг'}}</option>
+            </select>
+            <img src="@/assets/icons/select.svg" alt="">
+        </div>
         <div class="card__footer" >
-            <p class="price-discount"><span v-if="priceDiscound">{{ priceDiscound + 'р'}}</span> <span class="price" v-if="price">{{ price + 'р'}}</span> <span class="price-old" v-if="priceOld">{{ priceOld + 'р'}}</span></p>
+            <p class="price-discount"><span v-if="priceDiscound">{{ priceDiscound + ' р'}}</span> <span class="price" v-if="price">{{ price + ' р'}}</span> <span class="price-old" v-if="priceOld">{{ priceOld + ' р'}}</span></p>
             <div class="card__btn">
                 В корзину
             </div>
@@ -48,7 +56,19 @@ export default {
         },
         promotion:{
             type: String
-        }
+        },
+        weight:{
+            type: String
+        },
+        weightValue1:{
+            type: String
+        },
+        weightValue2:{
+            type: String
+        },
+        weightValue3:{
+            type: String
+        },
     }
 }
 </script>

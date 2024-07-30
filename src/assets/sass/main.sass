@@ -1041,6 +1041,8 @@ ul
         .card-wrapper
             padding: 20px
             border: 1px solid #c8cbd0
+            margin-top: -1px
+            margin-left: -1px
             height: 502px
             max-width: 220px
             .card
@@ -1049,6 +1051,25 @@ ul
                 flex-direction: column
                 justify-content: space-between
                 position: relative
+                .select-block
+                    display: flex
+                    position: relative
+                    // padding: 10px
+                    img
+                        position: absolute
+                        top: 18px
+                        right: 10px
+                        margin-bottom: 0
+                .select
+                    cursor: pointer
+                    width: 100%
+                    padding: 10px
+                    font-size: 14px
+                    line-height: 160%
+                    appearance: none
+                    border: 1px solid #c8cbd0
+                    border-radius: 5px
+                    outline: none
                 .promotion
                     position: absolute
                     top: -20px
