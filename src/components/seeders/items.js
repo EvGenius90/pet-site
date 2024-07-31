@@ -11,7 +11,7 @@ export default[
     },
     {
         id: 2,
-        alias: 'simparika',
+        alias: 'conserva',
         title: 'simparika',
         img: require('@/assets/imgs/banka.png'),
         descr: 'Консервы Royal Canin Adult Beauty для собак (195 гр)',
@@ -19,9 +19,10 @@ export default[
     },
     {
         id: 3,
-        alias: 'simparika',
+        alias: 'wet food',
         title: 'simparika',
         img: require('@/assets/imgs/korm.png'),
+        bigImg: require('@/assets/imgs/big-korm.jpg'),
         descr: 'Влажный корм Royal Canin British shorthair кусочки в соусе для британских кошек  ',
         priceOld: 4500,
         priceDiscound: 3651,
@@ -29,10 +30,15 @@ export default[
         weightValue1: '0.8',
         weightValue2: '2',
         weightValue3: '4',
+        type: 'Влажный корм, Премиум, Породные корма',
+        age: 'Взрослые',
+        Manufacturer: 'Royal Canin',
+        ProductCode: '15205',
+
     },
     {
         id: 4,
-        alias: 'simparika',
+        alias: 'Pukhoderka',
         title: 'simparika',
         img: require('@/assets/imgs/pukhoderka.png'),
         descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
@@ -40,7 +46,7 @@ export default[
     },
     {
         id: 5,
-        alias: 'simparika',
+        alias: 'Pukhoderka',
         title: 'simparika',
         img: require('@/assets/imgs/pukhoderka.png'),
         descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
@@ -58,7 +64,7 @@ export default[
     },
     {
         id: 7,
-        alias: 'simparika',
+        alias: 'wet food',
         title: 'simparika',
         img: require('@/assets/imgs/korm.png'),
         descr: 'Влажный корм Royal Canin British shorthair кусочки в соусе для британских кошек  ',
@@ -71,7 +77,7 @@ export default[
     },
     {
         id: 8,
-        alias: 'simparika',
+        alias: 'Pukhoderka',
         title: 'simparika',
         img: require('@/assets/imgs/pukhoderka.png'),
         descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
@@ -79,7 +85,7 @@ export default[
     },
     {
         id: 9,
-        alias: 'simparika',
+        alias: 'Pukhoderka',
         title: 'simparika',
         img: require('@/assets/imgs/pukhoderka.png'),
         descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
@@ -87,7 +93,7 @@ export default[
     },
     {
         id: 10,
-        alias: 'simparika',
+        alias: 'Pukhoderka',
         title: 'simparika',
         img: require('@/assets/imgs/pukhoderka.png'),
         descr: 'Пуходерка Hello Pet 16811M металлическая средняя',

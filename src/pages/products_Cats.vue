@@ -195,7 +195,7 @@
                     <card :promotion="item.promotion" :imgUrl="item.img" :desc="item.descr" :price="item.price" 
                         :priceDiscound="item.priceDiscound" :priceOld="item.priceOld" 
                         :weightValue1="item.weightValue1" :weightValue2="item.weightValue2" :weightValue3="item.weightValue3"
-                        :weightValue="item.weightValue">
+                        :weightValue="item.weightValue" :link="item.alias">
                     </card>
                 </div>
             </div>

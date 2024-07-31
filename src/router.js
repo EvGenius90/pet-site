@@ -12,6 +12,7 @@ import Agreements from './pages/agreements'
 import Bonus from './pages/bonus'
 import Cats from './pages/cats'
 import Products_Cats from './pages/products_Cats'
+import Item from './pages/_itemAlias'
 
 const routerHistory = createWebHistory()
 
@@ -72,6 +73,11 @@ const router = createRouter({
             path: '/products_Cats',
             name: 'products_Cats',
             component: Products_Cats
+        },
+        {
+            path: '/:itemAlias',
+            name: 'alias',
+            component: Item,
         },
         {
             path: '/:CatchAll(.*)',

@@ -3,12 +3,12 @@
         <div class="promotion" v-if="promotion">
             {{ promotion + '%' }}
         </div>
-        <a href="#">
+        <RouterLink v-if=link :to="link">
             <div v-if="imgUrl">
                 <img :src="imgUrl" alt="">
             </div>
             <p class="card__desc">{{ desc }}</p>
-        </a>
+        </RouterLink>
         <div class="select-block" v-if="weightValue1">
             <select class="select" name="choice" >
                 <option value="first">{{ weightValue1 + ' кг'}}</option>
@@ -18,7 +18,11 @@
             <img src="@/assets/icons/select.svg" alt="">
         </div>
         <div class="card__footer" >
-            <p class="price-discount"><span v-if="priceDiscound">{{ priceDiscound + ' р'}}</span> <span class="price" v-if="price">{{ price + ' р'}}</span> <span class="price-old" v-if="priceOld">{{ priceOld + ' р'}}</span></p>
+            <p class="price-discount">
+                <span v-if="priceDiscound">{{ priceDiscound + ' р'}}</span> 
+                <span class="price" v-if="price">{{ price + ' р'}}</span> 
+                <span class="price-old" v-if="priceOld">{{ priceOld + ' р'}}</span>
+            </p>
             <div class="card__btn">
                 В корзину
             </div>
@@ -69,6 +73,9 @@ export default {
         weightValue3:{
             type: String
         },
+        link:{
+            type: String
+        }
     }
 }
 </script>
