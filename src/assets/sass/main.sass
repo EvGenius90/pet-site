@@ -263,6 +263,8 @@ ul
             cursor: pointer
             img
                 margin-right: 14px
+            span
+                font-size: 14px
             &__products
                 position: absolute
                 top: 8px
@@ -594,7 +596,8 @@ ul
     background: #fff
     border-radius: 10px
     box-shadow: 0 4px 12px 0 rgba(72, 105, 154, 0.24)
-    &__inner
+    max-width: 578px
+    // max-height: 530px
 
 .not-found
     margin: 0 auto
@@ -1045,12 +1048,12 @@ ul
             margin-left: -1px
             height: 502px
             max-width: 220px
+            position: relative
             .card
                 height: 100%
                 display: flex
                 flex-direction: column
                 justify-content: space-between
-                position: relative
                 .select-block
                     display: flex
                     position: relative
@@ -1069,19 +1072,7 @@ ul
                     border: 1px solid #c8cbd0
                     border-radius: 5px
                     outline: none
-                .promotion
-                    position: absolute
-                    top: -20px
-                    left: -20px
-                    z-index: 1
-                    background: #ec2525
-                    color: #fff
-                    width: 64px
-                    height: 30px
-                    border-bottom-right-radius: 10px
-                    text-align: center
-                    align-content: center
-                    font-family: "Montserrat-semiBold"
+                
                 &__desc
                     font-size: 14px
                     line-height: 160%
@@ -1093,6 +1084,11 @@ ul
                 
             img
                 margin-bottom: 20px
+
+
+.block-basket
+    &__content
+        // border-bottom: 1px solid #c8cbd0
 
 .price
     color: #333
@@ -1113,7 +1109,19 @@ ul
     font-family: "Montserrat-semiBold"
     font-size: 14px
     color: #fe9015
-
+.promotion
+    position: absolute
+    top: 0px
+    left: 0px
+    z-index: 1
+    background: #ec2525
+    color: #fff
+    width: 64px
+    height: 30px
+    border-bottom-right-radius: 10px
+    text-align: center
+    align-content: center
+    font-family: "Montserrat-semiBold"
 .card__btn
     cursor: pointer
     padding: 10px 45px
@@ -1126,6 +1134,7 @@ ul
     .profile-product
         display: flex
         &__foto
+            position: relative
             border: 1px solid #c8cbd0
             // padding: 10px 30px
             max-width: 362px
@@ -1161,13 +1170,16 @@ ul
                         p:not(:last-child)
                             margin-right: 15px
                 &_type
+                    width: 360px
                     ul
                         list-style-type: none
                         padding: 0
                         li
                             display: flex
+                            align-items: center
                             margin-bottom: 30px
                             font-size: 14px
+                            
                         li::before
                             content: ''
                             border-bottom: 1px dotted #c8cbd0
@@ -1175,18 +1187,47 @@ ul
                             order: 2
                             margin: 0.5px
                         span
+                            display: flex
+                            flex-direction: column
+                            max-width: 200px
+                            text-align: left
+                            align-content: center
                             order: 3
             &_right
                 &_purchase
                     border: 1px solid #c8cbd0
                     border-radius: 5px
                     padding: 25px
+                    margin-bottom: 25px
                 .one-click_border
                     border: 1px solid #fe9015
                     border-radius: 5px
                     padding: 11px 20px
                     color: #fe9015
                     cursor: pointer
+
+.product-info
+    max-width: 264px
+    &__block
+        display: flex
+        align-items: flex-start
+        font-size: 14px
+        line-height: 150%
+        img
+            margin-right: 10px
+    &__block:not(:last-child)
+        margin-bottom: 15px
+    &__availability
+        span
+            color: #219653
+    &__delivery
+        span
+            color: #219653
+    &__delivery-info
+        div
+            span
+                a
+                    color: #fe9015
 
 .change-quantities
     border: 1px solid #fe9015

@@ -212,7 +212,7 @@ export default {
 
     data(){
         return{
-            items: items,
+            items,
             minValue: '',
             maxValue: ''
         }

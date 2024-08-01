@@ -3,7 +3,10 @@
         <div class="container">
             <div class="profile-product">
                 <div class="profile-product__foto">
-                    <img :src="item.img" alt="">
+                    <img class="foto" :src="item.img" alt="">
+                    <div class="promotion" v-if="item.promotion">
+                        {{ item.promotion + '%' }}
+                    </div>
                 </div>
                 <div class="profile-product__information">
                     <div class="profile-product__title">
@@ -31,8 +34,8 @@
                         </div>
                         <div class="profile-product__data_right">
                             <div class="profile-product__data_right_purchase">
-                                <div class="price-discount">
-                                    <span v-if="item.priceDiscound">{{ item.priceDiscound + ' р'}}</span> 
+                                <div class="price-discount" style="font-size: 24px;">
+                                    <span class="price-current" v-if="item.priceDiscound">{{ item.priceDiscound + ' р'}}</span> 
                                     <span class="price" v-if="item.price">{{ item.price + ' р'}}</span> 
                                     <span class="price-old" v-if="item.priceOld">{{ item.priceOld + ' р'}}</span>
                                 </div>
@@ -48,6 +51,31 @@
                                     Купить в 1 клик
                                 </div>
                             </div>
+                            <div class="product-info">
+                                <div class="product-info__availability product-info__block" v-if="item.availability">
+                                    <img src="../assets/icons/galka-green.svg" alt="">
+                                    <span>Есть на складе</span>
+                                </div>
+                                <div class="product-info__delivery product-info__block" v-if="item.availability">
+                                    <img src="../assets/icons/clock-green.svg" alt="">
+                                    <span>Доставим сегодня</span>
+                                </div>
+                                <div class="product-info__availability-not product-info__block" v-if="!item.availability">
+                                    <img src="../assets/icons/exclamation-point.svg" alt="">
+                                    <div>
+                                        <span>Нет в наличии. Под заказ от 2 до 7 дней</span>
+                                    </div>
+                                </div>
+                                <div class="product-info__delivery-info product-info__block">
+                                    <img src="../assets/icons/car.svg" alt="">
+                                    <div>
+                                        <span>
+                                            Бесплатная доставка по Тюмени при заказе от 1490р.
+                                            <a href="#">Узнать все условия доставки</a>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -59,12 +87,14 @@
 
 <script>
 import items from '@/components/seeders/items.js'
+import { basket } from '@/_config';
 
 export default {
     data(){
         return{
             item: null,
             counter: 0,
+            basket,
         }
     },
     created(){
@@ -72,15 +102,53 @@ export default {
         const item = items.find(el => el.alias === alias)
         this.item = item
     },
+    props:{
+        imgUrl:{
+            type: String
+        },
+    },
     methods:{
         addToBasket(){
-        this.counter++
+            if(this.item.priceDiscound){
+                this.basket.price += this.item.priceDiscound
+            }
+            else{
+                this.basket.price += this.item.price
+            }
+
+            this.counter++
+            this.basket.basketCounter++
+
+            document.querySelector('.block-basket__content').innerHTML = 
+                `<div style="display: flex; border-bottom: 1px solid #c8cbd0">
+                    <img style="width: 100px; height: 100px" src="${this.item.img}" alt="">
+                    <p>${this.item.descr}</p>
+                    <p>${this.counter + ' шт'}</p>
+                </div>`
         },
         plus(){
+            if(this.item.priceDiscound){
+                this.basket.price += this.item.priceDiscound
+            }
+            else{
+                this.basket.price += this.item.price
+            }
+
+            // this.basket.price += this.item.priceDiscound
             this.counter++
+            this.basket.basketCounter++
         },
         minus(){
+            if(this.item.priceDiscound){
+                this.basket.price -= this.item.priceDiscound
+            }
+            else{
+                this.basket.price -= this.item.price
+            }
+
+            // this.basket.price -= this.item.priceDiscound
             this.counter--
+            this.basket.basketCounter--
         }
     }
     

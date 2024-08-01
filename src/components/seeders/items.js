@@ -7,7 +7,12 @@ export default[
         descr: 'Zoetis: Симпарика 5мг (3таб.) от блох и клещей для собак 1,3-2,5кг',
         priceOld: 4500,
         priceDiscound: 3651,
-        promotion: 33,
+        promotion: -33,
+        type: 'Влажный корм, Премиум, Породные корма',
+        age: 'Взрослые',
+        Manufacturer: 'Royal Canin',
+        ProductCode: '15205',
+        availability: true
     },
     {
         id: 2,
@@ -15,7 +20,12 @@ export default[
         title: 'simparika',
         img: require('@/assets/imgs/banka.png'),
         descr: 'Консервы Royal Canin Adult Beauty для собак (195 гр)',
-        price: 3651
+        price: 107,
+        type: 'Влажный корм, Премиум, Породные корма',
+        age: 'Взрослые',
+        Manufacturer: 'Royal Canin',
+        ProductCode: '15205',
+        availability: false
     },
     {
         id: 3,
@@ -26,7 +36,7 @@ export default[
         descr: 'Влажный корм Royal Canin British shorthair кусочки в соусе для британских кошек  ',
         priceOld: 4500,
         priceDiscound: 3651,
-        promotion: 33,
+        promotion: -33,
         weightValue1: '0.8',
         weightValue2: '2',
         weightValue3: '4',
@@ -34,7 +44,7 @@ export default[
         age: 'Взрослые',
         Manufacturer: 'Royal Canin',
         ProductCode: '15205',
-
+        availability: true
     },
     {
         id: 4,
@@ -42,7 +52,12 @@ export default[
         title: 'simparika',
         img: require('@/assets/imgs/pukhoderka.png'),
         descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
-        price: 3651
+        price: 651,
+        type: 'Влажный корм, Премиум, Породные корма',
+        age: 'Взрослые',
+        Manufacturer: 'Royal Canin',
+        ProductCode: '15205',
+        availability: false
     },
     {
         id: 5,
@@ -50,7 +65,12 @@ export default[
         title: 'simparika',
         img: require('@/assets/imgs/pukhoderka.png'),
         descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
-        price: 3651
+        price: 651,
+        type: 'Влажный корм, Премиум, Породные корма',
+        age: 'Взрослые',
+        Manufacturer: 'Royal Canin',
+        ProductCode: '15205',
+        availability: false
     },
     {
         id: 6,
@@ -60,7 +80,12 @@ export default[
         descr: 'Zoetis: Симпарика 5мг (3таб.) от блох и клещей для собак 1,3-2,5кг',
         priceOld: 4500,
         priceDiscound: 3651,
-        promotion: 33,
+        promotion: -33,
+        type: 'Влажный корм, Премиум, Породные корма',
+        age: 'Взрослые',
+        Manufacturer: 'Royal Canin',
+        ProductCode: '15205',
+        availability: true
     },
     {
         id: 7,
@@ -70,10 +95,15 @@ export default[
         descr: 'Влажный корм Royal Canin British shorthair кусочки в соусе для британских кошек  ',
         priceOld: 4500,
         priceDiscound: 3651,
-        promotion: 33,
+        promotion: -33,
         weightValue1: '0.8',
         weightValue2: '2',
         weightValue3: '4',
+        type: 'Влажный корм, Премиум, Породные корма',
+        age: 'Взрослые',
+        Manufacturer: 'Royal Canin',
+        ProductCode: '15205',
+        availability: true
     },
     {
         id: 8,
@@ -81,7 +111,12 @@ export default[
         title: 'simparika',
         img: require('@/assets/imgs/pukhoderka.png'),
         descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
-        price: 3651
+        price: 651,
+        type: 'Влажный корм, Премиум, Породные корма',
+        age: 'Взрослые',
+        Manufacturer: 'Royal Canin',
+        ProductCode: '15205',
+        availability: false
     },
     {
         id: 9,
@@ -89,7 +124,12 @@ export default[
         title: 'simparika',
         img: require('@/assets/imgs/pukhoderka.png'),
         descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
-        price: 3651
+        price: 651,
+        type: 'Влажный корм, Премиум, Породные корма',
+        age: 'Взрослые',
+        Manufacturer: 'Royal Canin',
+        ProductCode: '15205',
+        availability: true
     },
     {
         id: 10,
@@ -97,6 +137,11 @@ export default[
         title: 'simparika',
         img: require('@/assets/imgs/pukhoderka.png'),
         descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
-        price: 3651
+        price: 651,
+        type: 'Влажный корм, Премиум, Породные корма',
+        age: 'Взрослые',
+        Manufacturer: 'Royal Canin',
+        ProductCode: '15205',
+        availability: false
     },
 ]

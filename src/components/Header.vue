@@ -59,14 +59,18 @@
                         <img :src="icons.profile.url" alt="profile">
                         <span>Войти</span>
                     </div>
-                    <div class="basket">
+                    <div class="basket" @click="showBasket">
                         <img :src="icons.basket.url" alt="basket">
+                        <span v-if="basket.price">{{basket.price}}</span>
                         <div class="basket__products">
-                            <span>0</span>
+                            <span>{{ basket.basketCounter }}</span> 
+                            <!-- добавлен v-if для проверки наличия значения item.basketCounter -->
+                            <!-- <span>{{ item.basketCounter }}</span> -->
                         </div>
                     </div>
                     <div class="basket-vidget d-none">
                         <div class="basket-vidget__inner">
+                            <BlockProducts></BlockProducts>
                             <span>Корзина пуста</span>
                         </div>
                     </div>
@@ -101,8 +105,10 @@ import {
     promotions, 
     vetclinic, 
     franchising,
-    headerMore
+    headerMore,
+    basket
 } from '@/_config';
+import BlockProducts from '@/components/UI/basketComp'
 
 export default {
     data() {
@@ -114,9 +120,11 @@ export default {
             promotions,
             vetclinic,
             franchising,
-            headerMore
+            headerMore,
+            basket
         }
     },
+    components: { BlockProducts },
     methods:{
         more(e){
             const linkMore = document.querySelectorAll('.link-more')
@@ -139,6 +147,18 @@ export default {
             if(header.scrollY > 20){
                 console.log('goood')
             }
+        },
+        showBasket(){
+            // const target = e.target
+    
+            // if(!target.closest('.basket') && !target.closest('.basket-vidget')){
+
+            //     basketVidget.classList.add('d-none')
+
+            // }
+            const basketVidget = document.querySelector('.basket-vidget')
+
+            basketVidget.classList.toggle('d-none')
         },
         myHeader(){
             const header = document.querySelector('.header')
