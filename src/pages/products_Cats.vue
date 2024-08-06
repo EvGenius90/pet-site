@@ -192,7 +192,7 @@
             </div>
             <div class="products_cats__right-column">
                 <div class="card-wrapper" v-for="item of items" :key="item.id">
-                    <card :promotion="item.promotion" :imgUrl="item.img" :desc="item.descr" :price="item.price" 
+                    <card :promotion="item.promotion" :imgUrl="item.img" :noImg="item.noImg" :desc="item.descr" :price="item.price" 
                         :priceDiscound="item.priceDiscound" :priceOld="item.priceOld" 
                         :weightValue1="item.weightValue1" :weightValue2="item.weightValue2" :weightValue3="item.weightValue3"
                         :weightValue="item.weightValue" :link="item.alias">

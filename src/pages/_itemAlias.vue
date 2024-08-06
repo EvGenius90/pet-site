@@ -3,9 +3,34 @@
         <div class="container">
             <div class="profile-product">
                 <div class="profile-product__foto">
-                    <img class="foto" :src="item.img" alt="">
-                    <div class="promotion" v-if="item.promotion">
-                        {{ item.promotion + '%' }}
+                    <div class="profile-product__foto_block">
+                        <img class="foto" v-if="item.img" :src="item.img" alt="">
+                        <img class="no-foto" v-else :src="item.noImg" alt="">
+                        <div class="promotion" v-if="item.promotion">
+                            {{ item.promotion + '%' }}
+                        </div>
+                    </div>
+                    <div class="profile-product__slid" v-if="item.sliderImg1">
+                        <div class="profile-product__slid_left" v-if="i >= 2" @click="left">
+                            <img class="profile-product__slid_left_svg" src="../assets/icons/Group443.svg" alt="">
+                        </div>
+                        <div class="profile-product__slid_right" v-if="item.sliderImg4" @click=right>
+                            <img class="profile-product__slid_right_svg" src="../assets/icons/Group443.svg" alt="">
+                        </div>
+                        <div class="profile-product__slider">
+                            <div class="active-foto  profile-product__slider_img">
+                                <img class="profile-product__slider_sfoto" :src="item.sliderImg1" alt="">
+                            </div>
+                            <div class="profile-product__slider_img" v-if="item.sliderImg2">
+                                <img class="profile-product__slider_sfoto" :src="item.sliderImg2" alt="">
+                            </div>
+                            <div class="profile-product__slider_img" v-if="item.sliderImg3">
+                                <img class="profile-product__slider_sfoto" :src="item.sliderImg3" alt="">
+                            </div>
+                            <div class="profile-product__slider_img" v-if="item.sliderImg4">
+                                <img class="profile-product__slider_sfoto" :src="item.sliderImg4" alt="">
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="profile-product__information">
@@ -31,6 +56,7 @@
                                     <li>Производитель<span>{{ item.Manufacturer }}</span></li>
                                 </ul>
                             </div>
+                            <p class="profile-product__data_left_all">Смотреть все</p>
                         </div>
                         <div class="profile-product__data_right">
                             <div class="profile-product__data_right_purchase">
@@ -95,6 +121,7 @@ export default {
             item: null,
             counter: 0,
             basket,
+            i: 1
         }
     },
     created(){
@@ -149,7 +176,36 @@ export default {
             // this.basket.price -= this.item.priceDiscound
             this.counter--
             this.basket.basketCounter--
-        }
+        },
+        right(){
+            const imgs = document.querySelectorAll('.profile-product__slider_img')
+            const rig = document.querySelector('.profile-product__slid_right')
+            
+            if(imgs.length){
+                imgs[this.i - 1].classList.add('d-none')
+                    
+            }
+            // удаляет правую кнопку слайдера если this.i == imgs.length - 2
+            if(this.i == imgs.length - 2){
+                rig.classList.add('d-none')
+            }
+            
+            ++this.i
+        },
+        left(){
+            const imgs = document.querySelectorAll('.profile-product__slider_img')
+            const rig = document.querySelector('.profile-product__slid_right')
+            
+            if(imgs.length){
+                imgs[this.i - 2].classList.remove('d-none')
+            }
+            // показывает правую кнопку слайдера если this.i == imgs.length - 1
+            if(this.i == imgs.length  - 1){
+                rig.classList.remove('d-none')
+            }
+
+            --this.i
+        },
     }
     
 }

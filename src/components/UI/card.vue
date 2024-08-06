@@ -7,13 +7,16 @@
             <div v-if="imgUrl">
                 <img :src="imgUrl" alt="">
             </div>
+            <div v-else>
+                <img :src="noImg" alt="">
+            </div>
             <p class="card__desc">{{ desc }}</p>
         </RouterLink>
         <div class="select-block" v-if="weightValue1">
             <select class="select" name="choice" >
-                <option value="first">{{ weightValue1 + ' кг'}}</option>
-                <option value="second" selected>{{ weightValue2 + ' кг'}}</option>
-                <option value="third">{{ weightValue3 + ' кг'}}</option>
+                <option value="">{{ weightValue1 + ' кг'}}</option>
+                <option value="" selected>{{ weightValue2 + ' кг'}}</option>
+                <option value="">{{ weightValue3 + ' кг'}}</option>
             </select>
             <img src="@/assets/icons/select.svg" alt="">
         </div>
@@ -43,6 +46,9 @@ export default {
             required: true
         },
         imgUrl:{
+            type: String
+        },
+        noImg:{
             type: String
         },
         desc:{
