@@ -13,7 +13,8 @@ export default[
         age: 'Взрослые',
         Manufacturer: 'Royal Canin',
         ProductCode: '15205',
-        availability: true
+        availability: true,
+        category: 'pills',
     },
     {
         id: 2,
@@ -27,7 +28,8 @@ export default[
         age: 'Взрослые',
         Manufacturer: 'Royal Canin',
         ProductCode: '15205',
-        availability: false
+        availability: false,
+        category: 'foo',
     },
     {
         id: 3,
@@ -50,12 +52,13 @@ export default[
         age: 'Взрослые',
         Manufacturer: 'Royal Canin',
         ProductCode: '15205',
-        availability: true
+        availability: true,
+        category: 'foo',
     },
     {
         id: 4,
-        alias: 'Pukhoderka',
-        title: 'simparika',
+        alias: 'Pukhoderka1',
+        title: 'simparika1',
         img: require('@/assets/imgs/pukhoderka.png'),
         descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
         price: 651,
@@ -63,7 +66,8 @@ export default[
         age: 'Взрослые',
         Manufacturer: 'Royal Canin',
         ProductCode: '15205',
-        availability: false
+        availability: true,
+        category: 'foo',
     },
     {
         id: 5,
@@ -80,8 +84,8 @@ export default[
     },
     {
         id: 6,
-        alias: 'simparika',
-        title: 'simparika',
+        alias: 'pills',
+        title: 'pills',
         img: require('@/assets/imgs/Screenshot_7 6.png'),
         descr: 'Zoetis: Симпарика 5мг (3таб.) от блох и клещей для собак 1,3-2,5кг',
         priceOld: 4500,
@@ -91,7 +95,8 @@ export default[
         age: 'Взрослые',
         Manufacturer: 'Royal Canin',
         ProductCode: '15205',
-        availability: true
+        availability: true,
+        category: 'pills',
     },
     {
         id: 7,
@@ -109,7 +114,8 @@ export default[
         age: 'Взрослые',
         Manufacturer: 'Royal Canin',
         ProductCode: '15205',
-        availability: true
+        availability: true,
+        category: 'foo',
     },
     {
         id: 8,
@@ -139,15 +145,18 @@ export default[
     },
     {
         id: 10,
-        alias: 'Pukhoderka',
-        title: 'simparika',
-        img: require('@/assets/imgs/pukhoderka.png'),
-        descr: 'Пуходерка Hello Pet 16811M металлическая средняя',
-        price: 651,
+        alias: 'pills',
+        title: 'pills',
+        img: require('@/assets/imgs/Screenshot_7 6.png'),
+        descr: 'Zoetis: Симпарика 5мг (3таб.) от блох и клещей для собак 1,3-2,5кг',
+        priceOld: 4500,
+        priceDiscound: 3651,
+        promotion: -33,
         type: 'Влажный корм, Премиум, Породные корма',
         age: 'Взрослые',
         Manufacturer: 'Royal Canin',
         ProductCode: '15205',
-        availability: false
+        availability: true,
+        category: 'pills',
     },
 ]

@@ -13,6 +13,7 @@ import Bonus from './pages/bonus'
 import Cats from './pages/cats'
 import Products_Cats from './pages/products_Cats'
 import Item from './pages/_itemAlias'
+import Delivery from './pages/delivery'
 
 const routerHistory = createWebHistory()
 
@@ -75,9 +76,14 @@ const router = createRouter({
             component: Products_Cats
         },
         {
+            path: '/delivery',
+            name: 'delivery',
+            component: Delivery
+        },
+        {
             path: '/:itemAlias',
             name: 'alias',
-            component: Item,
+            component: Item
         },
         {
             path: '/:CatchAll(.*)',

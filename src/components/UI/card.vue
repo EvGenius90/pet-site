@@ -81,7 +81,10 @@ export default {
         },
         link:{
             type: String
-        }
+        },
+        category:{
+            type: String
+        },
     }
 }
 </script>

@@ -3,8 +3,10 @@
         <div class="about">
             <img class="about__image" src="../assets/imgs/Frame 483.png" alt="">
             <div class="about__tabs tabss">
+
                 <div class="tabs__inner">
                     <nav class="tabs__items">
+
                         <input class="tabs__radio" type="radio" name="select" id="tab_01" >
                         <label class="tabs__label" for="tab_01">Команда магазина</label>
                         
@@ -39,17 +41,21 @@
                             <img src="../assets/imgs/Frame 488.png" alt="">
                             <img src="../assets/imgs/Frame 489.png" alt="">
                         </div>
+
                         <hr>
+
                     </nav>
                     
                 </div>
                 <div class="about__information">
+
                     <div class="about__characteristics">
                         <p><span>7 лет</span> <br> работаем для вас</p>
                         <p><span>8000</span> <br> Постоянных <br> клиентов</p>
                         <p><span>2 часа</span> <br> Среднее время доставки</p>
                         <p><span>17</span> <br> Неравнодушных к зверятам сотрудников</p>
                     </div>
+
                     <div class="about__history">
                         <h2>Как мы появились</h2>
                         <ul>
@@ -62,8 +68,10 @@
                             <li>гибкая система лояльности, благодаря которой мы завоевали огромную популярность среди покупателей»</li>
                         </ul>
                     </div>
+
                 </div>
                 <div class="about__slider">
+
                     <div class="about__slider_left" @click="left">
                         <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M1.01791 8.4521L8.55199 0.917334L9.96875 2.33423L2.43468 9.86899L1.01791 8.4521Z" fill="#FE9015"/>
@@ -85,8 +93,10 @@
                         <img class="about__slider_img opas" src="../assets/imgs/15 1.png" alt="">
                         <img class="about__slider_img opas" src="../assets/imgs/15 1.png" alt="">
                     </div>
+
                 </div>
                 <div class="about__video">
+                    
                     <h2>Видеоэкскурсия по магазину</h2>
 
                 </div>
