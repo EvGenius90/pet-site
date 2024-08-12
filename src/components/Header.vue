@@ -64,8 +64,6 @@
                         <span v-if="basket.price">{{basket.price}}</span>
                         <div class="basket__products">
                             <span>{{ basket.basketCounter }}</span> 
-                            <!-- добавлен v-if для проверки наличия значения item.basketCounter -->
-                            <!-- <span>{{ item.basketCounter }}</span> -->
                         </div>
                     </div>
                     <div class="basket-vidget d-none">

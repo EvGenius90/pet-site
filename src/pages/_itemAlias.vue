@@ -187,7 +187,7 @@
 
 <script>
 import items from '@/components/seeders/items.js'
-import { basket } from '@/_config';
+import { basket, qwe } from '@/_config';
 import Card from '@/components/UI/card';
 
 export default {
@@ -199,8 +199,10 @@ export default {
             items,
             counter: 0,
             basket,
+            qwe,
             i: 1,
             src: '',
+            numberBasketArray: 0
         }
     },
     created(){
@@ -229,13 +231,17 @@ export default {
 
             this.counter++
             this.basket.basketCounter++
+            this.numberBasketArray++
 
-            document.querySelector('.block-basket__content').innerHTML = 
-                `<div style="display: flex; border-bottom: 1px solid #c8cbd0">
-                    <img style="width: 100px; height: 100px" src="${this.item.img}" alt="">
-                    <p>${this.item.descr}</p>
-                    <p>${this.counter + ' шт'}</p>
-                </div>`
+            this.qwe.push({
+                img: this.item.img,
+                descr: this.item.descr,
+                counter: this.counter,
+                price: this. item.price,
+                priceDiscound: this.item.priceDiscound,
+                priceOld: this.item.priceOld,
+                promotion: this.item.promotion
+            })
         },
         plus(){
             if(this.item.priceDiscound){
@@ -245,9 +251,14 @@ export default {
                 this.basket.price += this.item.price
             }
 
-            // this.basket.price += this.item.priceDiscound
+            
             this.counter++
             this.basket.basketCounter++
+
+            // перебирает массив qwe и увеличивает кол-во данного товара
+            for(let i of this.qwe){
+                i.counter++
+            }
         },
         minus(){
             if(this.item.priceDiscound){
@@ -257,7 +268,7 @@ export default {
                 this.basket.price -= this.item.price
             }
 
-            // this.basket.price -= this.item.priceDiscound
+            
             this.counter--
             this.basket.basketCounter--
         },

@@ -30,6 +30,10 @@ export const basket = {
     price: 0
 }
 
+export const qwe = []
+
+
+
 export const productsCatsUrl = {
     url: '/products_Cats'
 }
