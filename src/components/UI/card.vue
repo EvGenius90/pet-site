@@ -5,7 +5,7 @@
         </div>
         <RouterLink v-if=link :to="link">
             <div v-if="imgUrl">
-                <img :src="imgUrl" alt="">
+                <img class="" :src="imgUrl" alt="">
             </div>
             <div v-else>
                 <img :src="noImg" alt="">

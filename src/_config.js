@@ -26,13 +26,15 @@ export const links = [
 ]
 
 export const basket = {
+    // общее кол-во товаров в корзине
     basketCounter: 0,
-    price: 0
+    // общая цена товаров в корзине
+    price: 0,
+    totalPriceDiscound: 0,
+    totalPrice: 0,
 }
-
-export const qwe = []
-
-
+// список добавленных товаров в корзину
+export const listBasket = []
 
 export const productsCatsUrl = {
     url: '/products_Cats'

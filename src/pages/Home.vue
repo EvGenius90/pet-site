@@ -3,10 +3,10 @@
     <div class="slider">
         <div class="container">
             <div class="slider__inner">
-                <div class="slider__arrow-L">
+                <div class="slider__arrow-L" @click=sliderLeft>
                     <img :src="icons.arrowLeft.url" alt="">
                 </div>
-                <div class="slider__arrow-R">
+                <div class="slider__arrow-R" @click="sliderRight">
                     <img :src="icons.arrowRight.url" alt="">
                 </div>
                 <div class="slide">
@@ -124,7 +124,34 @@ export default {
     data(){
         return{
             pictures,
-            icons
+            icons,
+            num: 0
+        }
+    },
+    methods:{
+        sliderRight(){
+            const slide = document.querySelectorAll('.slide')
+            
+            if(this.num < slide.length - 1){
+                this.num++
+                slide[this.num - 1].classList.add('d-none')
+                slide[this.num].classList.remove('d-none')
+            }
+            else{
+                slide[this.num].classList.remove('d-none')
+            }
+        },
+        sliderLeft(){
+            const slide = document.querySelectorAll('.slide')
+            if(this.num > 0){
+                this.num--
+                slide[this.num + 1].classList.add('d-none')
+                slide[this.num].classList.remove('d-none')
+            }
+            else{
+                slide[this.num].classList.remove('d-none')
+            }
+            
         }
     }
 }

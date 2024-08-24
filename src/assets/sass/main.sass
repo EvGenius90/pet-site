@@ -599,6 +599,9 @@ ul
     box-shadow: 0 4px 12px 0 rgba(72, 105, 154, 0.24)
     max-width: 578px
     width: 100%
+    display: none
+    &__inner
+        text-align: center
 
 .not-found
     margin: 0 auto
@@ -1062,6 +1065,7 @@ ul
                         position: absolute
                         top: 18px
                         right: 10px
+                        width: 10px
                         margin-bottom: 0
                 .select
                     cursor: pointer
@@ -1088,6 +1092,7 @@ ul
                 
             img
                 margin-bottom: 20px
+                width: 100%
 
 
 .block-basket
@@ -1097,6 +1102,7 @@ ul
         padding-top: 20px
         padding-bottom: 20px
         border-bottom: 1px solid #c8cbd0
+        margin-bottom: 30px
         &-foto
             position: relative
         &-promotion
@@ -1118,6 +1124,33 @@ ul
         &-prices
             display: flex
             flex-direction: column
+    &__total
+        display: flex
+        justify-content: space-between
+        &-price
+            p
+                line-height: 160%
+                padding-right: 23px
+            span
+                font-family: "Montserrat-semiBold"
+                font-size: 24px
+                line-height: 160%
+        &-button
+            align-content: center
+            &-btn
+                padding: 10px 30px
+                color: #fff
+                background: #fe9015
+                border-radius: 5px
+                cursor: pointer
+            &-btn:hover
+                background: #fa8400
+
+.basket:hover + .basket-vidget
+    display: block
+
+.basket-vidget:hover
+    display: block
 
 
 .price

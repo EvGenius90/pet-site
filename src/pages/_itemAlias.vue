@@ -52,6 +52,12 @@
                                     <p class="profile-product__data_left_weight_block_p" @click="focusParagraph">{{ item.weightValue3 + ' кг'}}</p>
                                 </div>
                             </div>
+                            <div class="profile-product__data_left_weight" v-if="item.grams1">
+                                <div class="profile-product__data_left_weight_block">
+                                    <p class="profile-product__data_left_weight_block_p" @click="focusParagraph">{{ item.grams1 + ' мг'}}</p>
+                                    <p class="profile-product__data_left_weight_block_p" @click="focusParagraph">{{ item.grams2 + ' мг'}}</p>
+                                </div>
+                            </div>
                             <div class="profile-product__data_left_type">
                                 <ul>
                                     <li>Тип<span>{{ item.type }}</span></li>
@@ -102,7 +108,7 @@
                                     <div>
                                         <span>
                                             Бесплатная доставка по Тюмени при заказе от 1490р.
-                                            <a href="#">Узнать все условия доставки</a>
+                                            <RouterLink :to="links[1].url">Узнать все условия доставки</RouterLink>
                                         </span>
                                     </div>
                                 </div>
@@ -117,10 +123,8 @@
                     <div class="tabss">
                         <div class="tabs__inner" style="margin-bottom: auto">
                             <div class="tabs__items">
-        
                                 <input class="tabs__radio" type="radio" name="select" id="tab_01" >
                                 <label class="tabs__label" for="tab_01">Описание</label>
-        
                                 <div class="tabs__block item-alias__tabs__block">
                                     <ul>
                                         <li>Тип<span>{{ item.type }}</span></li>
@@ -133,7 +137,6 @@
                                         <li>Производитель<span>{{ item.Manufacturer }}</span></li>
                                     </ul>
                                 </div>
-        
                                 <input class="tabs__radio" type="radio" name="select" id="tab_02">
                                 <label class="tabs__label" for="tab_02">Характеристики</label>
                                 <div class="tabs__block">
@@ -152,7 +155,6 @@
 
             <div class="similar-products">
                 <h1>Похожие товары</h1>
-
                 <div class="similar-products__inner" >
                     <div class="products_cats__right-column" v-for="item of items" :key="item.id">
                         <dvi class="card-wrapper"  v-if="item.alias == this.$route.params.itemAlias">
@@ -167,7 +169,6 @@
 
             <div class="Recommended-products">
                 <h1>Рекомендуемые товары</h1>
-
                 <div class="Recommended-products__inner" >
                     <div class="products_cats__right-column" v-for="item of items" :key="item.id">
                         <dvi class="card-wrapper"  v-if="item.category == this.$route.params.category">
@@ -187,7 +188,7 @@
 
 <script>
 import items from '@/components/seeders/items.js'
-import { basket, qwe } from '@/_config';
+import { basket, listBasket, links } from '@/_config';
 import Card from '@/components/UI/card';
 
 export default {
@@ -198,11 +199,13 @@ export default {
             itemCategory: null,
             items,
             counter: 0,
+            qwe: 0,
             basket,
-            qwe,
+            listBasket,
             i: 1,
             src: '',
-            numberBasketArray: 0
+            numberBasketArray: 0,
+            links
         }
     },
     created(){
@@ -220,44 +223,70 @@ export default {
             type: String
         },
     },
+    
     methods:{
         addToBasket(){
+            // увеличивает кол-во товарв в корзине на один
+            this.counter++
+            // увеличивает кол-во товара в корзине на один
+            this.basket.basketCounter++
+
             if(this.item.priceDiscound){
                 this.basket.price += this.item.priceDiscound
+                this.qwe = this.counter * this.item.priceDiscound
             }
             else{
                 this.basket.price += this.item.price
+                this.qwe = this.counter * this.item.price
             }
+            
+            
+            // this.numberBasketArray++
 
-            this.counter++
-            this.basket.basketCounter++
-            this.numberBasketArray++
-
-            this.qwe.push({
+            this.listBasket.push({
                 img: this.item.img,
                 descr: this.item.descr,
                 counter: this.counter,
-                price: this. item.price,
+                price: this.item.price,
                 priceDiscound: this.item.priceDiscound,
                 priceOld: this.item.priceOld,
-                promotion: this.item.promotion
+                promotion: this.item.promotion,
+                qwe: this.qwe, // переменная содержащая сумму денег данного товара добавленного в корзину
+                totalPrice: this.basket.totalPrice,
+                alias: this.item.alias
             })
+            
         },
         plus(){
+            // увеличивает кол-во товарв в корзине
+            this.counter++
+            // увеличивает кол-во товара в корзине
+            this.basket.basketCounter++
+            
+            
+
             if(this.item.priceDiscound){
                 this.basket.price += this.item.priceDiscound
+                this.qwe = this.counter * this.item.priceDiscound
             }
             else{
                 this.basket.price += this.item.price
+                this.qwe = this.counter * this.item.price
             }
-
             
-            this.counter++
-            this.basket.basketCounter++
-
-            // перебирает массив qwe и увеличивает кол-во данного товара
-            for(let i of this.qwe){
-                i.counter++
+            
+            // перебирает массив listBasket и увеличивает кол-во данного товара
+            for(let i of this.listBasket){
+                if(i.alias === this.item.alias){
+                    i.counter++
+                    if(this.item.priceDiscound){
+                        i.qwe += this.item.priceDiscound
+                    }
+                    else{
+                        i.qwe += this.item.price
+                    }
+                    
+                }
             }
         },
         minus(){
@@ -268,9 +297,25 @@ export default {
                 this.basket.price -= this.item.price
             }
 
-            
             this.counter--
             this.basket.basketCounter--
+
+            for(let i of this.listBasket){
+                if(i.alias === this.item.alias){
+                    i.counter--
+                    if(i.counter == 0){
+                        this.listBasket.splice(this.listBasket.indexOf(i), 1)
+                    }
+                }
+            }
+        },
+        computed:{
+            zero(){
+                if(this.counter > 0){
+                    // this.counter = 0
+                    console.log(this.counter)
+                }
+            },
         },
         right(){
             const imgs = document.querySelectorAll('.profile-product__slider_img')

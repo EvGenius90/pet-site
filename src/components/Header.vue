@@ -1,5 +1,5 @@
 <template>
-    <header class="header" :scroll="asd">
+    <header class="header" :scroll="asd" @click="xxx">
         <div class="container">
             <div class="header__inner">
                 <div class="header__upper">
@@ -8,8 +8,8 @@
                             <ul>
                                 <li class="header__upper-list more">
                                     <routerLink class="header__upper-outline link-more" to="#" @click="more">Ваш город</routerLink>
-                                    <ul class="header__upper-list-submenu submenu hidden-menu">
-                                        <div class="all-close submenu__close close">&#215;</div>
+                                    <ul class="header__upper-list-submenu submenu hidden-menu ">
+                                        <div class="all-close submenu__close close" @click=submenu__close>&#215;</div>
                                         <p>Выберите ваш город</p>
                                         <div class="header__upper-list-submenu-box">
                                             <input type="search" placeholder="Ваш город">
@@ -66,10 +66,10 @@
                             <span>{{ basket.basketCounter }}</span> 
                         </div>
                     </div>
-                    <div class="basket-vidget d-none">
+                    <div class="basket-vidget ">
                         <div class="basket-vidget__inner">
                             <BlockProducts></BlockProducts>
-                            <span>Корзина пуста</span>
+                            <span v-if="!listBasket.length">Корзина пуста</span>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,8 @@ import {
     vetclinic, 
     franchising,
     headerMore,
-    basket
+    basket,
+    listBasket
 } from '@/_config';
 import BlockProducts from '@/components/UI/basketComp'
 
@@ -119,13 +120,13 @@ export default {
             vetclinic,
             franchising,
             headerMore,
-            basket
+            basket,
+            listBasket
         }
     },
     components: { BlockProducts },
     methods:{
         more(e){
-            const linkMore = document.querySelectorAll('.link-more')
 
             // находит родительский элемент
             const submenu = e.target.closest('.more')
@@ -133,17 +134,29 @@ export default {
             const zxc = submenu.querySelector('.submenu')
             // меняет стиль окна
             zxc.classList.toggle('visible-menu')
+            
+        },
+        xxx(e){
+            const zxc = document.querySelectorAll('.submenu')
+
+            for(let i of zxc){
+                if(!e.target.closest('.more')){
+                    i.classList.remove('visible-menu')
+                }
+            }
         },
         close(){
-            const modalClose = document.querySelectorAll('.modal-close')
-
             orderCall.classList.add('d-none')
             document.body.style.overflow = ''
+        },
+        submenu__close(e){
+            const close = e.target.closest('.submenu__close')
+            const closeParrent = close.closest('.submenu')
+            closeParrent.classList.remove('visible-menu')
         },
         qwe(){
             const header = document.querySelector('.header')
             if(header.scrollY > 20){
-                console.log('goood')
             }
         },
         showBasket(){
@@ -156,7 +169,7 @@ export default {
             // }
             const basketVidget = document.querySelector('.basket-vidget')
 
-            basketVidget.classList.toggle('d-none')
+            // basketVidget.classList.toggle('d-none')
         },
         myHeader(){
             const header = document.querySelector('.header')
@@ -173,7 +186,6 @@ export default {
             const hHeight = header.offsetHeight
             
             if(window.scrollY <= 200){
-                console.log('goood')
             }
             // const scrollY = window.scrollY
 
