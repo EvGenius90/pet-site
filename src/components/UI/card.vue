@@ -29,7 +29,7 @@
             <div class="card__btn">
                 В корзину
             </div>
-            <div class="card__footer_buy-click">
+            <div class="card__footer_buy-click" @click="modalWindow">
                 <a href="#" class="one-click">Купить в 1 клик</a>
             </div>
         </div>
@@ -37,8 +37,6 @@
 </template>
 
 <script>
-
-
 export default {
     props:{
         name:{
@@ -85,10 +83,15 @@ export default {
         category:{
             type: String
         },
-    }
+    },
+    methods:{
+        modalWindow(){
+            const modal = document.querySelector('.dark-fon')
+            modal.classList.remove('d-none')
+            document.body.style.overflow = 'hidden'
+            
+        },
+    },
+    
 }
 </script>
-
-<style>
-
-</style>

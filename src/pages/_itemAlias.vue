@@ -1,4 +1,5 @@
 <template>
+    <orderOneClick/>
     <div class="item-alias" v-if="item">
         <div class="container">
             <div class="profile-product">
@@ -83,7 +84,7 @@
                                         <span>{{counter}}</span>
                                         <div class="plus" @click="plus"></div>
                                     </div>
-                                    <div class="one-click_border">
+                                    <div class="one-click_border" @click=modalWindow>
                                         Купить в 1 клик
                                     </div>
                                 </div>
@@ -190,9 +191,10 @@
 import items from '@/components/seeders/items.js'
 import { basket, listBasket, links } from '@/_config';
 import Card from '@/components/UI/card';
+import orderOneClick from '@/components/UI/orderOneClick'
 
 export default {
-    components:{ Card },
+    components:{ Card, orderOneClick },
     data(){
         return{
             item: null,
@@ -308,6 +310,12 @@ export default {
                     }
                 }
             }
+        },
+        modalWindow(){
+            const modal = document.querySelector('.dark-fon')
+            modal.classList.remove('d-none')
+            document.body.style.overflow = 'hidden'
+            
         },
         computed:{
             zero(){

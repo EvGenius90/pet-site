@@ -199,6 +199,8 @@
                     </card>
                 </div>
             </div>
+
+            <orderOneClick/>
             
         </div>
     </div>
@@ -207,9 +209,10 @@
 <script>
 import items from '@/components/seeders/items'
 import Card from '@/components/UI/card'
+import orderOneClick from '@/components/UI/orderOneClick'
 
 export default {
-    components: { Card  },
+    components: { Card, orderOneClick  },
 
     data(){
         return{
@@ -257,7 +260,8 @@ export default {
                 // Открывает или закрывает блок
                 opening.classList.toggle('hidden-column')
             }
-        }
+        },
+        
     }
 }
 </script>

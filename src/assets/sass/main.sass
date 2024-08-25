@@ -24,6 +24,7 @@ body
 
 html
     scroll-behavior: smooth
+    scrollbar-gutter: stable
     
 html, body
     height: 100%
@@ -113,7 +114,7 @@ ul
                 min-height: 200px
                 padding: 30px
                 position: absolute
-                z-index: 1
+                z-index: 2
                 background: #fff
                 border-radius: 10px
                 box-shadow: 0 4px 12px 0 rgba(72, 105, 154, 0.24)
@@ -1329,8 +1330,7 @@ ul
                     padding: 11px 20px
                     color: #fe9015
                     cursor: pointer
-                .card__btn:hover
-                    background: #fa8400
+                
     &__about
         margin-bottom: 120px
         &__tabs__block
@@ -1372,6 +1372,9 @@ ul
         &__inner
             display: flex
 
+@media(any-hover: hover)
+    .card__btn:hover
+        background: #fa8400
 
 .product-info
     max-width: 264px
@@ -1420,7 +1423,67 @@ ul
         background: #fe9015
         cursor: pointer
 
+.dark-fon
+    position: fixed
+    z-index: 100
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.2)
+.order-click
+    position: fixed
+    z-index: 3
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    width: 350px
+    padding: 30px
+    margin: 0 auto
+    background: #fff
+    border-radius: 10px
+    box-shadow: 0 4px 12px 0 rgba(72, 105, 154, 0.24)
+    &__content
+        h2
+            text-align: center
+            font-family: "Montserrat-semiBold"
+            font-size: 20px
+            line-height: 140%
+            margin-bottom: 20px
+        form
+            display: flex
+            flex-direction: column
+            label
+                color: #848992
+                font-size: 12px
+                margin-bottom: 8px
+            input
+                border: 1px solid #c8cbd0
+                border-radius: 5px
+                padding: 13px 15px
+                outline: none
+                margin-bottom: 30px
+            button
+                padding: 12px 0
+                color: #fff
+                border: none
+                border-radius: 5px
+                background: #fe9015
+                cursor: pointer
+            @media(any-hover: hover)
+                button:hover
+                    background: #fa8400
 
+            
+        
+
+.modal-close
+    position: absolute
+    top: 0
+    right: 0
+    padding: 10px
+    font-size: 35px
+    cursor: pointer
 
 .hidden-column
     grid-template-rows: 0fr
