@@ -26,9 +26,8 @@ export default {
   methods:{
     close(e){
       const modal = document.querySelector('.dark-fon')
-      const modalClose = document.querySelector('.modal-close')
       
-      if(e.target == modal || e.target == modalClose){
+      if(e.target.classList.contains('dark-fon') || e.target.classList.contains('modal-close')){
           modal.classList.add('d-none')
           document.body.style.overflow = ''
       }

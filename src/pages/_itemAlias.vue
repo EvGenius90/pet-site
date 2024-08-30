@@ -189,8 +189,8 @@
 
 <script>
 import items from '@/components/seeders/items.js'
-import { basket, listBasket, links } from '@/_config';
-import Card from '@/components/UI/card';
+import { basket, listBasket, links } from '@/_config'
+import Card from '@/components/UI/card'
 import orderOneClick from '@/components/UI/orderOneClick'
 
 export default {

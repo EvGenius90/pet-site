@@ -26,7 +26,7 @@
                 <span class="price" v-if="price">{{ price + ' р'}}</span> 
                 <span class="price-old" v-if="priceOld">{{ priceOld + ' р'}}</span>
             </p>
-            <div class="card__btn">
+            <div class="card__btn" @click="addToBasket">
                 В корзину
             </div>
             <div class="card__footer_buy-click" @click="modalWindow">
@@ -37,7 +37,70 @@
 </template>
 
 <script>
+import items from '@/components/seeders/items.js'
+import { basket, listBasket, links } from '@/_config'
+
 export default {
+    data(){
+        return{
+            item: null,
+            items,
+            counter: 0,
+            qwe: 0,
+            basket,
+            listBasket,
+        }
+    },
+    created(){
+        const alias = this.$route.params.itemAlias
+        const item = items.find(el => el.alias === alias)
+
+        const category = this.$route.params.category
+        const itemCategory = items.find(el => el.category === category)
+
+        this.itemCategory = itemCategory
+        this.item = item
+    },
+    methods:{
+        addToBasket(){
+            // увеличивает кол-во товарв в корзине на один
+            this.counter++
+            // увеличивает кол-во товара в корзине на один
+            this.basket.basketCounter++
+
+            if(this.priceDiscound){
+                this.basket.price += this.priceDiscound
+                this.qwe = this.counter * this.priceDiscound
+            }
+            else{
+                this.basket.price += this.price
+                this.qwe = this.counter * this.price
+            }
+            
+            
+            // this.numberBasketArray++
+
+            this.listBasket.push({
+                img: this.imgUrl,
+                descr: this.desc,
+                counter: this.counter,
+                price: this.price,
+                priceDiscound: this.priceDiscound,
+                priceOld: this.priceOld,
+                promotion: this.promotion,
+                qwe: this.qwe, // переменная содержащая сумму денег данного товара добавленного в корзину
+                totalPrice: this.basket.totalPrice,
+                alias: this.alias
+            })
+            
+        },
+        modalWindow(){
+            const modal = document.querySelector('.dark-fon')
+            modal.classList.remove('d-none')
+            document.body.style.overflow = 'hidden'
+            
+        },
+    },
     props:{
         name:{
             type: String,
@@ -84,14 +147,5 @@ export default {
             type: String
         },
     },
-    methods:{
-        modalWindow(){
-            const modal = document.querySelector('.dark-fon')
-            modal.classList.remove('d-none')
-            document.body.style.overflow = 'hidden'
-            
-        },
-    },
-    
 }
 </script>
